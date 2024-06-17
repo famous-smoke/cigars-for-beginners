@@ -1,4 +1,4 @@
-# Famous Smoke Shop Cigars For Beginner
+# Famous Smoke Shop Cigars For Beginners
 
 Learn about the lifestyle, the flavor, the norms, and the main how-to's of cigar smoking from our beginner's guide!
 
