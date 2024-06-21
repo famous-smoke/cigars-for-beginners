@@ -1,0 +1,45 @@
+/* Styling for the unordered list */
+.item-list > ul {
+  list-style-type: none;
+  padding-left: 8%; /* Indent the entire list */
+}
+
+.item-list > ul li {
+  position: relative;
+  padding-left: 40px; /* Adjust to make space for the checkmark icon */
+  margin-bottom: 15px; /* Adjust spacing between list items */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Animation properties */
+}
+
+/* Styling for the checkmark icon */
+.item-list > ul.checkmarks li h3::before {
+  content: '';
+  position: absolute;
+  left: -20px; /* Adjust position to be just left of the h3 */
+  top: 10%;
+  transform: translateY(-50%);
+  width: 50px; /* Adjust size to fit appropriately */
+  height: 50px; /* Adjust size to fit appropriately */
+  background: url('/cigars-for-beginners/icons/icon-green-checkmark.png') no-repeat center center;
+  background-size: contain;
+}
+
+/* Float the picture to the left */
+.item-list > ul.images li picture {
+  float: left;
+  margin-right: 50px; /* Space between the picture and text */
+  width: 204px; /* Allow the image to define its own width */
+  height: 204px; /* Allow the image to define its own height */
+}
+
+/* Animation class for when the element scrolls into view */
+.animate-right ul li.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Styling for centered ul */
+.item-list > ul.centered {
+  width: 60%;
+  margin: 0 auto;
+}
