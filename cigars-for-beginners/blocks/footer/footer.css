@@ -1,14 +1,24 @@
 footer {
   padding: 2rem;
-  background-color: var(--light-color);
+  background-color: #f6f4f0;
   font-size: var(--body-font-size-s);
 }
 
 footer .footer {
-  max-width: 1200px;
-  margin: auto;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0 100px;
+}
+
+footer .footer-logo-wrap {
+  margin: 0 auto 30px;
 }
 
 footer .footer p {
   margin: 0;
+  font-size: 1rem;
+  color: #4a4a4a;
+  font-weight: 300;
 }
