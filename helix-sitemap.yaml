@@ -1,0 +1,6 @@
+sitemaps:
+  pages:
+    origin: https://www.famous-smoke.com
+    source: /cigars-for-beginners/index/query-index.json
+    destination: /cigars-for-beginners/page-sitemap.xml
+    lastmod: YYYY-MM-DD
