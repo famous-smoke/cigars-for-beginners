@@ -311,6 +311,7 @@ header nav .nav-sections ul > li > ul > li {
     right: 0;
     left: 0;
     background: #000;
+    z-index: 2;
   }
 
   header nav[aria-expanded='true'] .nav-sections ul {
