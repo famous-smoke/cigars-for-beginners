@@ -1,96 +1,70 @@
+/* Style for unordered lists within .item-list to remove default list styling and ensure proper width */
 .item-list > ul {
   list-style-type: none;
-  padding-left: 5%; /* Indent the entire list */
-  max-width: 100%; /* Ensure the ul does not exceed the viewport width */
+  padding-left: 5%;
+  width: 95%;
 }
 
+/* Flexbox layout for list items within .item-list, with transitions for opacity and transform */
 .item-list > ul li {
-  position: relative;
+  display: flex;
+  align-items: flex-start;
   padding-right: 20px;
   margin-bottom: 15px;
   transition: opacity 0.5s ease, transform 0.5s ease;
   max-width: 100%;
-  float: left;
-}
-
-/* List content floats to the right */
-.item-list > ul li div {
-  float: left;
   width: 100%;
-  /* margin-right: 0px;
-  margin-left: 0px; */
 }
 
-/* List picture floats to the left */
+/* Style for div elements within list items to take up remaining space */
+.item-list > ul li div {
+  flex: 1;
+}
+
+/* Fixed width for picture elements within list items, maintaining aspect ratio */
 .item-list > ul li picture {
-  float: left;
   width: 20%;
+  height: auto;
+  margin-right: 15px;
   margin-top: 1.5em;
 }
 
-/* ******* ******* ******* ******* */
-/* ******* CHECKMARKS ******* */
-/* ******* ******* ******* ******* */
-/* Adjust list content width */
+/* Adjust div width in checkmarks list items for full width */
 .item-list > ul.checkmarks li div {
-  max-width: 92%;
+  max-width: none;
+  width: 100%;
 }
 
-/* Adjust picture content width */
+/* Set a fixed width for picture elements in checkmarks list items */
 .item-list > ul.checkmarks li picture {
-  max-width: 36px;
+  width: 36px;
+  height: auto;
 }
 
-/* Animation class for when the element scrolls into view */
+/* Animation class for list items that become visible on scroll, setting final opacity and position */
 .animate-right ul li.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* ******* ******* ******* ******* */
-/* ******* CENTERED ******* */
-/* ******* ******* ******* ******* */
-.item-list > ul.centered {
-  padding-left: 0;
-}
-
-/* centered: Styling for centered ul */
-.item-list > ul.centered li {
-  padding-left: 15%;
-  padding-right: 15%;
-}
-
-/* Adjust list content width */
-.item-list > ul.centered li div {
-  width: 50%;
-}
-
-/* Adjust list picture content width */
-.item-list > ul.centered li picture {
-  width: 45%;
-}
-
-/* Media queries for mobile devices */
+/* Media query for mobile devices */
 @media (max-width: 600px) {
-  /* .item-list > ul li {
-    font-size: 0.8em;
-  } */
-
-  .item-list > ul li picture {
-    /* margin-top: 1.5em; */
+  /* Flexbox adjustment to stack list items vertically and center align them */
+  .item-list > ul.images li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  /* ******* ******* ******* ******* */
-  /* ******* CHECKMARKS ******* */
-  /* ******* ******* ******* ******* */
-
-  /* Adjust list content width */
-  .item-list > ul.checkmarks li div {
-    width: 90%;
+  /* Set picture width to 60% within list items and remove right margin */
+  .item-list > ul.images li picture {
+    width: 60%;
+    margin-right: 0;
   }
 
-  /* Adjust picture content width */
-  .item-list > ul.checkmarks li picture {
-    width: 8%;
+  /* Set div width within list items to 100% and center align text */
+  .item-list > ul.images li div {
+    width: 100%;
+    text-align: center;
   }
 }
