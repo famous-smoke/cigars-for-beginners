@@ -1,6 +1,6 @@
 import { sampleRUM, buildBlock, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS } from './aem.js';
 
-const LCP_BLOCKS = []; // add your LCP blocks to the list
+const LCP_BLOCKS = ['header', 'hero']; // add your LCP blocks to the list
 
 // Function to check if an element is in the viewport
 function isInViewport(element) {
