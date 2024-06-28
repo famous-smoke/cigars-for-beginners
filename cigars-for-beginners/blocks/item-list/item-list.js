@@ -22,7 +22,7 @@ export default async function decorate(block) {
     ul.classList.add('centered');
   }
 
-  // Get all the div elements containing the h3 and p elements
+  // Get all the div elements containing the h and p elements
   const divs = block.querySelectorAll(':scope > div');
 
   // Loop through each div to create list items
@@ -44,7 +44,7 @@ export default async function decorate(block) {
       li.appendChild(checkmarkPicture);
     }
 
-    // Create container for h3/p
+    // Create container for h/p
     const contentDiv = document.createElement('div');
 
     // Get all heading elements within the div

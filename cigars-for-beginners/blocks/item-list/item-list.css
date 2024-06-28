@@ -79,6 +79,7 @@
     text-align: center;
   }
 
+  /* Set width for centered pictures */
   .item-list > ul.centered li picture {
     width: 100%;
   }
@@ -89,6 +90,7 @@
   }
 }
 
+/* Media query for tablet devices */
 @media (max-width: 900px) {
   /* centered lists use more of the width */
   .item-list > ul.centered {
