@@ -47,6 +47,17 @@
   transform: translateX(0);
 }
 
+/* centered lists use less width */
+.item-list > ul.centered {
+  width: 60%;
+  margin: 0 auto; /* Center align the ul */
+}
+
+/* centered picutres less width */
+.item-list > ul.centered li picture {
+  width: 45%;
+}
+
 /* Media query for mobile devices */
 @media (max-width: 600px) {
   /* Flexbox adjustment to stack list items vertically and center align them */
@@ -66,5 +77,21 @@
   .item-list > ul.images li div {
     width: 100%;
     text-align: center;
+  }
+
+  .item-list > ul.centered li picture {
+    width: 100%;
+  }
+
+  /* centered lists use 100% of the width */
+  .item-list > ul.centered {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  /* centered lists use more of the width */
+  .item-list > ul.centered {
+    width: 80%;
   }
 }
