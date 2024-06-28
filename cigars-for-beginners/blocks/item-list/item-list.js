@@ -47,9 +47,13 @@ export default async function decorate(block) {
     // Create container for h3/p
     const contentDiv = document.createElement('div');
 
-    // Get the h3 elements
-    const h3 = div.querySelector('h3');
-    if (h3) contentDiv.appendChild(h3);
+    // Get all heading elements within the div
+    const headings = div.querySelectorAll('h3, h4, h5, h6');
+
+    // Append each heading to contentDiv if it exists
+    headings.forEach((heading) => {
+      contentDiv.appendChild(heading);
+    });
 
     // Get all p elements
     const paragraphs = div.querySelectorAll('p');
