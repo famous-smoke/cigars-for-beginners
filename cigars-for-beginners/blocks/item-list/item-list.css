@@ -1,35 +1,44 @@
-/* Styling for the unordered list */
 .item-list > ul {
   list-style-type: none;
-  padding-left: 8%; /* Indent the entire list */
+  padding-left: 5%; /* Indent the entire list */
+  max-width: 100%; /* Ensure the ul does not exceed the viewport width */
 }
 
 .item-list > ul li {
   position: relative;
-  padding-left: 40px; /* Adjust to make space for the checkmark icon */
-  margin-bottom: 15px; /* Adjust spacing between list items */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Animation properties */
-}
-
-/* Styling for the checkmark icon */
-.item-list > ul.checkmarks li h3::before {
-  content: '';
-  position: absolute;
-  left: -20px; /* Adjust position to be just left of the h3 */
-  top: 10%;
-  transform: translateY(-50%);
-  width: 50px; /* Adjust size to fit appropriately */
-  height: 50px; /* Adjust size to fit appropriately */
-  background: url('/cigars-for-beginners/icons/icon-green-checkmark.png') no-repeat center center;
-  background-size: contain;
-}
-
-/* Float the picture to the left */
-.item-list > ul.images li picture {
+  padding-right: 20px;
+  margin-bottom: 15px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  max-width: 100%;
   float: left;
-  margin-right: 50px; /* Space between the picture and text */
-  width: 204px; /* Allow the image to define its own width */
-  height: 204px; /* Allow the image to define its own height */
+}
+
+/* List content floats to the right */
+.item-list > ul li div {
+  float: left;
+  width: 100%;
+  /* margin-right: 0px;
+  margin-left: 0px; */
+}
+
+/* List picture floats to the left */
+.item-list > ul li picture {
+  float: left;
+  width: 20%;
+  margin-top: 1.5em;
+}
+
+/* ******* ******* ******* ******* */
+/* ******* CHECKMARKS ******* */
+/* ******* ******* ******* ******* */
+/* Adjust list content width */
+.item-list > ul.checkmarks li div {
+  max-width: 92%;
+}
+
+/* Adjust picture content width */
+.item-list > ul.checkmarks li picture {
+  max-width: 36px;
 }
 
 /* Animation class for when the element scrolls into view */
@@ -38,8 +47,50 @@
   transform: translateX(0);
 }
 
-/* Styling for centered ul */
+/* ******* ******* ******* ******* */
+/* ******* CENTERED ******* */
+/* ******* ******* ******* ******* */
 .item-list > ul.centered {
-  width: 60%;
-  margin: 0 auto;
+  padding-left: 0;
+}
+
+/* centered: Styling for centered ul */
+.item-list > ul.centered li {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+/* Adjust list content width */
+.item-list > ul.centered li div {
+  width: 50%;
+}
+
+/* Adjust list picture content width */
+.item-list > ul.centered li picture {
+  width: 45%;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 600px) {
+  /* .item-list > ul li {
+    font-size: 0.8em;
+  } */
+
+  .item-list > ul li picture {
+    /* margin-top: 1.5em; */
+  }
+
+  /* ******* ******* ******* ******* */
+  /* ******* CHECKMARKS ******* */
+  /* ******* ******* ******* ******* */
+
+  /* Adjust list content width */
+  .item-list > ul.checkmarks li div {
+    width: 90%;
+  }
+
+  /* Adjust picture content width */
+  .item-list > ul.checkmarks li picture {
+    width: 8%;
+  }
 }

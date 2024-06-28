@@ -5,8 +5,8 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
 // Function to check if an element is in the viewport
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
-  // eslint-disable-next-line max-len
-  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+  const height = window.innerHeight || document.documentElement.clientHeight;
+  return rect.top >= 0 && rect.top + 100 <= height;
 }
 
 // Function to add the 'visible' class to list items when they scroll into view
@@ -26,6 +26,8 @@ const animateRight = document.querySelector('.item-list.animate-right');
 // Add event listener for scroll if animate-right class is present
 if (animateRight) {
   window.addEventListener('scroll', handleScroll);
+  // Initial check in case some items are already in view
+  handleScroll();
 } else {
   // If animate-right class is not present, ensure all items are visible
   const items = document.querySelectorAll('.item-list ul li');

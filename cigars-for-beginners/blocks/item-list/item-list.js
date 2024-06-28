@@ -1,3 +1,5 @@
+import { createOptimizedPicture } from '../../scripts/aem.js';
+
 // Build block
 export default async function decorate(block) {
   const isCheckboxList = block.classList.contains('checkmarks');
@@ -32,17 +34,31 @@ export default async function decorate(block) {
     const picture = div.querySelector('picture');
     if (picture) {
       li.appendChild(picture);
+    } else {
+      // Add checkmark picture element
+      const checkmarkPicture = createOptimizedPicture('/cigars-for-beginners/icons/icon-green-checkmark.png', 'Checkmark');
+      checkmarkPicture.className = 'footer-logo';
+      const img = checkmarkPicture.lastElementChild;
+      img.width = 92;
+      img.height = 72;
+      li.appendChild(checkmarkPicture);
     }
+
+    // Create container for h3/p
+    const contentDiv = document.createElement('div');
 
     // Get the h3 elements
     const h3 = div.querySelector('h3');
-    if (h3) li.appendChild(h3);
+    if (h3) contentDiv.appendChild(h3);
 
     // Get all p elements
     const paragraphs = div.querySelectorAll('p');
     paragraphs.forEach((p) => {
-      li.appendChild(p);
+      contentDiv.appendChild(p);
     });
+
+    // Append content to list
+    li.appendChild(contentDiv);
 
     // If animate-right class is present, apply the initial hidden state
     if (animateRight) {
