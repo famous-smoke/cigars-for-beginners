@@ -6,7 +6,8 @@
   "scripts": {
     "lint:js": "eslint .",
     "lint:css": "stylelint cigars-for-beginners/blocks/**/*.css cigars-for-beginners/styles/*.css",
-    "lint": "npm run lint:js && npm run lint:css"
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css:fix": "npm run lint:css -- --fix"
   },
   "repository": {
     "type": "git",

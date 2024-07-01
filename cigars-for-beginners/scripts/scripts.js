@@ -1,19 +1,41 @@
-import {
-  sampleRUM,
-  buildBlock,
-  loadHeader,
-  loadFooter,
-  decorateButtons,
-  decorateIcons,
-  decorateSections,
-  decorateBlocks,
-  decorateTemplateAndTheme,
-  waitForLCP,
-  loadBlocks,
-  loadCSS,
-} from './aem.js';
+import { sampleRUM, buildBlock, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS } from './aem.js';
 
-const LCP_BLOCKS = []; // add your LCP blocks to the list
+const LCP_BLOCKS = ['header', 'hero']; // add your LCP blocks to the list
+
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  const height = window.innerHeight || document.documentElement.clientHeight;
+  return rect.top >= 0 && rect.top + 100 <= height;
+}
+
+// Function to add the 'visible' class to list items when they scroll into view
+function handleScroll() {
+  const items = document.querySelectorAll('.animate-right ul li');
+  items.forEach((item) => {
+    if (isInViewport(item)) {
+      item.style.opacity = '1';
+      item.style.transform = 'translateX(0)';
+    }
+  });
+}
+
+// Check if the document has the 'animate-right' class
+const animateRight = document.querySelector('.item-list.animate-right');
+
+// Add event listener for scroll if animate-right class is present
+if (animateRight) {
+  window.addEventListener('scroll', handleScroll);
+  // Initial check in case some items are already in view
+  handleScroll();
+} else {
+  // If animate-right class is not present, ensure all items are visible
+  const items = document.querySelectorAll('.item-list ul li');
+  items.forEach((item) => {
+    item.style.opacity = '1';
+    item.style.transform = 'translateX(0)';
+  });
+}
 
 /**
  * Builds hero block and prepends to main in a new section.
@@ -23,7 +45,7 @@ function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
   // eslint-disable-next-line no-bitwise
-  if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
+  if (h1 && picture && h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING) {
     const section = document.createElement('div');
     section.append(buildBlock('hero', { elems: [picture, h1] }));
     main.prepend(section);
