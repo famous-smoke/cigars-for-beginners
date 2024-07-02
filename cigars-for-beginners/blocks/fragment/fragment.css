@@ -11,3 +11,7 @@
 .fragment-wrapper > .section:last-of-type {
   padding-bottom: 0;
 }
+
+main .section.fragment-container {
+  padding-top: 0;
+}
