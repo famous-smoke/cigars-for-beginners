@@ -1,0 +1,99 @@
+/* Style for unordered lists within .item-list to remove default list styling and ensure proper width */
+.item-list > ul {
+  list-style-type: none;
+  padding-left: 5%;
+  width: 95%;
+}
+
+/* Flexbox layout for list items within .item-list, with transitions for opacity and transform */
+.item-list > ul li {
+  display: flex;
+  align-items: flex-start;
+  padding-right: 20px;
+  margin-bottom: 15px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Style for div elements within list items to take up remaining space */
+.item-list > ul li div {
+  flex: 1;
+}
+
+/* Fixed width for picture elements within list items, maintaining aspect ratio */
+.item-list > ul li picture {
+  width: 20%;
+  height: auto;
+  margin-right: 15px;
+  margin-top: 1.5em;
+}
+
+/* Adjust div width in checkmarks list items for full width */
+.item-list > ul.checkmarks li div {
+  max-width: none;
+  width: 100%;
+}
+
+/* Set a fixed width for picture elements in checkmarks list items */
+.item-list > ul.checkmarks li picture {
+  width: 36px;
+  height: auto;
+}
+
+/* Animation class for list items that become visible on scroll, setting final opacity and position */
+.animate-right ul li.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* centered lists use less width */
+.item-list > ul.centered {
+  width: 60%;
+  margin: 0 auto; /* Center align the ul */
+}
+
+/* centered picutres less width */
+.item-list > ul.centered li picture {
+  width: 45%;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  /* Flexbox adjustment to stack list items vertically and center align them */
+  .item-list > ul.images li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Set picture width to 60% within list items and remove right margin */
+  .item-list > ul.images li picture {
+    width: 60%;
+    margin-right: 0;
+  }
+
+  /* Set div width within list items to 100% and center align text */
+  .item-list > ul.images li div {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Set width for centered pictures */
+  .item-list > ul.centered li picture {
+    width: 100%;
+  }
+
+  /* centered lists use 100% of the width */
+  .item-list > ul.centered {
+    width: 100%;
+  }
+}
+
+/* Media query for tablet devices */
+@media (max-width: 900px) {
+  /* centered lists use more of the width */
+  .item-list > ul.centered {
+    width: 80%;
+  }
+}
