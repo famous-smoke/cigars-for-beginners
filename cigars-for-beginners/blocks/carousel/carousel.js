@@ -1,5 +1,7 @@
 import { fetchPlaceholders } from '../../scripts/aem.js';
 
+const NUM_SHOW_HIDE_WORDS = 12;
+
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
@@ -66,11 +68,27 @@ function bindEvents(block) {
         if (entry.isIntersecting) updateActiveSlide(entry.target);
       });
     },
+    // eslint-disable-next-line comma-dangle
     { threshold: 0.5 }
   );
   block.querySelectorAll('.carousel-slide').forEach((slide) => {
     slideObserver.observe(slide);
   });
+}
+
+// Function to toggle text visibility
+function toggleText(span, link, words) {
+  if (span.classList.contains('hidden-text')) {
+    span.classList.remove('hidden-text');
+    span.classList.add('show-more');
+    link.textContent = ' Read Less';
+    span.previousSibling.textContent = words.join(' ');
+  } else {
+    span.classList.remove('show-more');
+    span.classList.add('hidden-text');
+    link.textContent = ' ...Read More';
+    span.previousSibling.textContent = `${words.slice(0, NUM_SHOW_HIDE_WORDS).join(' ')}...`;
+  }
 }
 
 function createSlide(row, slideIndex, carouselId) {
@@ -80,7 +98,37 @@ function createSlide(row, slideIndex, carouselId) {
   slide.classList.add('carousel-slide');
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
-    column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
+    const carouselSlideClass = `carousel-slide-${colIdx === 0 ? 'image' : 'content'}`;
+    column.classList.add(carouselSlideClass);
+    if (carouselSlideClass === 'carousel-slide-content') {
+      const p = column.querySelector('p');
+      const pId = `p-carousel-${carouselId}-slide-${slideIndex}`;
+      p.id = pId;
+
+      // Split the text into words
+      const words = p.textContent.split(' ');
+      const visibleWords = words.slice(0, NUM_SHOW_HIDE_WORDS).join(' ');
+      const hiddenWords = words.slice(NUM_SHOW_HIDE_WORDS).join(' ');
+      p.textContent = `${visibleWords}...`;
+
+      // Add hidden words to span
+      const span = document.createElement('span');
+      span.className = 'hidden-text';
+      span.textContent = ` ${hiddenWords}`;
+      p.appendChild(span);
+
+      // Add read more/less link
+      const link = document.createElement('a');
+      link.href = '#';
+      link.onclick = () => {
+        toggleText(span, link, words);
+        return false;
+      };
+      link.textContent = '...Read More';
+
+      // Append the link after the paragraph
+      p.parentNode.insertBefore(link, p.nextSibling);
+    }
     slide.append(column);
   });
 
