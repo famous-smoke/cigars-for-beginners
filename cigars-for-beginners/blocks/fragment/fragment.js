@@ -4,13 +4,9 @@
  * https://www.aem.live/developer/block-collection/fragment
  */
 
-import {
-  decorateMain,
-} from '../../scripts/scripts.js';
+import { decorateMain } from '../../scripts/scripts.js';
 
-import {
-  loadBlocks,
-} from '../../scripts/aem.js';
+import { loadBlocks } from '../../scripts/aem.js';
 
 /**
  * Loads a fragment.
@@ -50,6 +46,15 @@ export default async function decorate(block) {
     if (fragmentSection) {
       block.closest('.section').classList.add(...fragmentSection.classList);
       block.closest('.fragment').replaceWith(...fragment.childNodes);
+    }
+    // Remove strange divs with empty paragraphs
+    const fragmentContainer = document.querySelector('.fragment-container');
+    const previousDiv = fragmentContainer.previousElementSibling;
+    if (previousDiv) {
+      const p = previousDiv.querySelector('p');
+      if (p && p.textContent.trim() === '') {
+        previousDiv.remove();
+      }
     }
   }
 }
