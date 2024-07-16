@@ -49,6 +49,8 @@ function openModal(e) {
   if (isVideo(href)) {
     const frame = document.createElement('iframe');
     frame.src = href;
+    frame.allow = 'autoplay; fullscreen; picture-in-picture';
+    frame.allowFullscreen = true;
     contentWrap.appendChild(frame);
   } else {
     const img = document.createElement('img');
