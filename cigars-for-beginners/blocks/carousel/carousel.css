@@ -52,6 +52,22 @@
   position: relative;
   width: var(--slide-content-width, auto);
   align-items: center;
+  overflow: hidden; /* Initially hide overflow */
+  max-height: 10rem; /* Set a max height for the content */
+  transition: max-height 0.3s ease; /* Smooth transition for expanding */
+}
+
+.carousel .carousel-slide .carousel-slide-content.show-more {
+  overflow-y: auto; /* Enable vertical scrolling when expanded */
+  max-height: 30rem; /* Set a max height for the expanded content */
+}
+
+.hidden-text {
+  display: none;
+}
+
+.show-more .hidden-text {
+  display: inline;
 }
 
 .carousel .carousel-slide-indicators {
@@ -137,18 +153,11 @@
 
 .carousel-slide h4,
 .carousel-slide p {
-  margin-top: 0em;
+  margin-top: 0;
 }
 
 .carousel-slide a {
   color: white;
-}
-
-.hidden-text {
-  display: none;
-}
-.show-more {
-  display: inline;
 }
 
 @media (width >= 600px) {
