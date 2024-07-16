@@ -1,7 +1,7 @@
 import { fetchPlaceholders } from '../../scripts/aem.js';
 
 const NUM_SHOW_HIDE_WORDS_MOBILE = 12;
-const NUM_SHOW_HIDE_WORDS_DESKTOP = 33; // Number of words to show on desktop
+const NUM_SHOW_HIDE_WORDS_DESKTOP = 33;
 
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel');
@@ -78,14 +78,11 @@ function bindEvents(block) {
   });
 }
 
-// Function to determine the number of words to show based on screen width
-function getNumShowHideWords() {
-  return window.innerWidth < 600 ? NUM_SHOW_HIDE_WORDS_MOBILE : NUM_SHOW_HIDE_WORDS_DESKTOP;
-}
+// eslint-disable-next-line max-len
+const numShowHideWords = window.innerWidth < 600 ? NUM_SHOW_HIDE_WORDS_MOBILE : NUM_SHOW_HIDE_WORDS_DESKTOP;
 
 // Function to toggle text visibility
 function toggleText(span, link, words, container) {
-  const numShowHideWords = getNumShowHideWords();
   if (span.classList.contains('hidden-text')) {
     span.classList.remove('hidden-text');
     span.classList.add('show-more');
@@ -93,8 +90,8 @@ function toggleText(span, link, words, container) {
     span.previousSibling.textContent = words.join(' ');
     container.classList.add('show-more'); // Add this line to allow scrolling
   } else {
-    span.classList.remove('show-more');
     span.classList.add('hidden-text');
+    span.classList.remove('show-more');
     link.textContent = ' ...Read More';
     span.previousSibling.textContent = `${words.slice(0, numShowHideWords).join(' ')}...`;
     container.classList.remove('show-more'); // Add this line to disable scrolling
@@ -117,7 +114,6 @@ function createSlide(row, slideIndex, carouselId) {
 
       // Split the text into words
       const words = p.textContent.split(' ');
-      const numShowHideWords = getNumShowHideWords();
       const visibleWords = words.slice(0, numShowHideWords).join(' ');
       const hiddenWords = words.slice(numShowHideWords).join(' ');
       p.textContent = `${visibleWords}...`;
