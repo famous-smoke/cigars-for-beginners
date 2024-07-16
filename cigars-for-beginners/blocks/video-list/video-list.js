@@ -6,7 +6,8 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
  * @return {boolean}
  */
 function isVideo(href) {
-  return !href.endsWith('.gif');
+  const url = new URL(href);
+  return !url.pathname.endsWith('.gif');
 }
 
 /**
@@ -32,8 +33,8 @@ function openModal(e) {
   const dialog = document.createElement('dialog');
   dialog.className = 'video-modal';
 
-  dialog.addEventListener('click', () => {
-    if (e.target.classList.contains('video-modal')) {
+  dialog.addEventListener('click', (event) => {
+    if (event.target.classList.contains('video-modal')) {
       closeModal();
     }
   });
@@ -82,8 +83,14 @@ export default function decorate(block) {
 
     // Find the last div and extract the href from its link
     const lastDiv = li.querySelector('div:last-child');
-    const link = lastDiv ? lastDiv.querySelector('a') : null;
-    const href = link ? link.href.replace(/\/$/, '') : '#'; // Strip trailing slash and default to '#' if no link is found
+    const link = lastDiv ? lastDiv.querySelector('a, img') : null;
+    let href = '#';
+    if (link.tagName === 'A') {
+      href = link.href.replace(/\/$/, '');
+    } else if (link.tagName === 'IMG') {
+      href = link.src;
+    }
+    lastDiv.remove();
 
     // The second div contains the title for links and buttons
     const secondDiv = li.children[1]; // direct access to the second child assuming it's a div
