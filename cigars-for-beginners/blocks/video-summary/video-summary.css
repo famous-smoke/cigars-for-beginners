@@ -1,0 +1,54 @@
+.video-summary .video-summary-embed {
+    border: none;
+    margin: 0 auto;
+    max-width: 820px;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-summary > div > div:last-child {
+    text-align: center;
+}
+
+.video-summary button {
+    background: none;
+    color: #1d1d1d;
+    border: none;
+    padding-bottom: 15px;
+    font-size: 0.75em;
+    font-weight: 300;
+    display: inline-flex;
+    align-items: center;
+}
+
+.video-summary button:hover {
+    text-decoration: underline;
+}
+
+.video-summary button span {
+    background-image: url('/cigars-for-beginners/icons/icon-plus.png');
+    background-size: contain;
+    margin-right: 0.6em;
+    width: 20px;
+    height: 20px;
+}
+
+.video-summary button span.show {
+    background-image: url('/cigars-for-beginners/icons/icon-minus.png');
+}
+
+.video-summary > div > div:last-child p {
+    max-width: 820px;
+    margin: 0 auto;
+    font-weight: 300;
+    visibility: hidden;
+    overflow: hidden;
+    transition: visibility 1s, max-height 1s;
+    max-height: 0;
+}
+
+.video-summary > div > div:last-child p.show {
+    visibility: visible;
+    max-height: 500px;
+}
