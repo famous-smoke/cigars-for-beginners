@@ -25,7 +25,7 @@ function getShowHide() {
   btnStatus.className = 'video-summary-btn-status';
 
   btn.prepend(btnStatus);
-  btn.addEventListener('click', e => {
+  btn.addEventListener('click', () => {
     btn.nextElementSibling.classList.toggle('show');
     btn.firstElementChild.classList.toggle('show');
   });
