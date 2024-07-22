@@ -1,0 +1,40 @@
+/* stylelint-disable-next-line no-descending-specificity */
+.terms-accordion details + details {
+  margin-top: 16px;
+}
+
+.terms-accordion details summary {
+  position: relative;
+  padding: 0 16px;
+  padding-right: 48px;
+  cursor: pointer;
+  list-style: none;
+  overflow: auto;
+  /*transition: background-color 0.2s;*/
+}
+
+.terms-accordion details summary::-webkit-details-marker {
+  display: none;
+}
+
+.terms-accordion details summary::before {
+  content: "+";
+  margin-right: 10px;
+}
+
+.terms-accordion details[open] summary::before {
+  content: "-"
+}
+
+.terms-accordion details .accordion-item-body {
+  padding: 0 40px;
+  color: white;
+}
+
+.terms-accordion details[open] .accordion-item-body {
+  background-color: transparent;
+}
+
+.terms-accordion .accordion-item-label {
+  color: white;
+}
