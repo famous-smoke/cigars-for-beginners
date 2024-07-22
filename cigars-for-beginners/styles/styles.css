@@ -177,7 +177,7 @@ button {
   transition: background .2s;
 }
 
-a.button:any-link:after {
+a.button:any-link::after {
   content: '';
   width: 14px;
   height: 14px;
@@ -202,8 +202,15 @@ button:disabled:hover {
   cursor: unset;
 }
 
-a.button.secondary:any-link:after {
+a.button.secondary:any-link::after {
   filter: invert(1);
+}
+
+a.button.secondary,
+button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: var(--text-color);
 }
 
 a.button.secondary:hover,
@@ -215,16 +222,9 @@ button.secondary:focus {
   color: var(--background-color);
 }
 
-a.button.secondary:any-link:hover:after,
-a.button.secondary:any-link:hover:after {
+a.button.secondary:any-link:hover::after,
+a.button.secondary:any-link:focus::after {
   filter: invert(0);
-}
-
-a.button.secondary,
-button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
 }
 
 .button-container {
