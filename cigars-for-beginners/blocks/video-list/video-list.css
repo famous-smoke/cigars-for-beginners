@@ -1,0 +1,113 @@
+.video-list ul {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.video-list li {
+    width: 33%;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.video-list h4 {
+    font-size: 1.3em;
+}
+
+.video-list h4 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.video-list .video-description {
+    font-weight: 300;
+    line-height: 26px;
+}
+
+.video-list picture {
+    position: relative;
+}
+
+.video-list .video-list-card-image.video picture::after,
+.video-list .video-list-card-image.gif picture::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: scale(0.5);
+}
+
+.video-list .video-list-card-image.video picture::after {
+    content: url("/cigars-for-beginners/icons/play.png");
+}
+
+.video-list .video-list-card-image.gif picture::after {
+    content: url("/cigars-for-beginners/icons/gif.png");
+}
+
+/* modal styling */
+.video-modal {
+    display: block;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: rgb(0 0 0 / 75%);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.video-modal .video-modal-content {
+    background: #fff;
+    max-width: 860px;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.video-modal .close-button {
+    position: absolute;
+    top: -1.25em;
+    right: -1.25em;
+    margin: 0;
+    background: #000;
+    color: #fff;
+    height: 35px;
+    width: 35px;
+    padding: 0;
+    border: solid 3px #fff;
+    border-radius: 100%;
+}
+
+.video-modal iframe {
+    width: 100%;
+    min-height: 500px;
+    border: none;
+}
+
+.video-modal img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    width: 640px;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 750px) {
+    .video-list li {
+        width: 50%;
+    }
+}
+
+@media (max-width: 650px) {
+    .video-list li {
+        width: 100%;
+    }
+}
