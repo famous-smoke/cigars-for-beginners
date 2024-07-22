@@ -22,7 +22,6 @@ async function loadTerms(letter) {
   const fragment = await loadFragment(path);
   const tabcontent = document.createElement('p');
   tabcontent.appendChild(fragment);
-  console.log(tabcontent);
   return tabcontent ? tabcontent.querySelector('main > .section .block') : null;
 }
 
