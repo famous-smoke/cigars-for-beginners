@@ -7,7 +7,6 @@ function hasWrapper(el) {
 }
 
 async function loadTerms(letter) {
-
   if (!letter) {
     return null;
   }
