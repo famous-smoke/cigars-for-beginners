@@ -14,6 +14,8 @@
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
+  --button-color: #007aff;
+  --button-hover-color: #3892ff;
   --background-color: white;
   --light-color: #eee;
   --dark-color: #ccc;
@@ -161,25 +163,36 @@ button {
   box-sizing: border-box;
   text-decoration: none;
   border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 16px 40px;
   text-align: center;
+  font-size: 1.25em;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
-  margin: 16px 0;
+  background-color: var(--button-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  transition: background .2s;
+}
+
+a.button:any-link:after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  background-image: url('/cigars-for-beginners/icons/icon-next.png');
+  background-position: left center;
+  background-size: contain;
+  display: inline-block;
+  margin-left: 0.8em;
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--button-hover-color);
   cursor: pointer;
 }
 
@@ -189,11 +202,35 @@ button:disabled:hover {
   cursor: unset;
 }
 
+a.button.secondary:any-link:after {
+  filter: invert(1);
+}
+
+a.button.secondary:hover,
+a.button.secondary:focus,
+button.secondary:hover
+button.secondary:focus {
+  background-color: var(--text-color);
+  border-color: var(--text-color);
+  color: var(--background-color);
+}
+
+a.button.secondary:any-link:hover:after,
+a.button.secondary:any-link:hover:after {
+  filter: invert(0);
+}
+
 a.button.secondary,
 button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
+}
+
+.button-container {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 main img {
