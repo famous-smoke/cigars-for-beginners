@@ -44,7 +44,7 @@
     font-weight: 300;
     visibility: hidden;
     overflow: hidden;
-    transition: visibility 1s, max-height 1s;
+    transition: visibility 500ms, max-height 500ms;
     max-height: 0;
 }
 
