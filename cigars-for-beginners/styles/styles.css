@@ -285,10 +285,13 @@ main .section:empty {
 /* specific sections */
 .section.hand-made-vs-machine-made {
   background-color: #5d7333;
-  padding: 0;
   max-width: 100%;
   color: #fff;
   padding: 80px 0;
+}
+
+.cigar-pairing img {
+  margin: 1em 0;
 }
 
 .hand-made-vs-machine-made .columns img {
@@ -318,12 +321,12 @@ main .section:empty {
   padding: 0 32px;
 }
 
-.cigar-pairing .columns > div > div {
-  overflow: hidden;
+.key-characteristics .columns > div {
+  align-items: start;
 }
 
-.cigar-pairing img {
-  margin: 1em 0;
+.cigar-pairing .columns > div > div {
+  overflow: hidden;
 }
 
 .cigar-pairing .columns > div > div p:first-child img {
@@ -364,10 +367,6 @@ main .section:empty {
   margin: 0 auto 20px;
   font-style: normal;
   font-weight: bold;
-}
-
-.key-characteristics .columns > div {
-  align-items: start;
 }
 
 main .section.cigar-terminology {
