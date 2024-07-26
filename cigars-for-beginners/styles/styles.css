@@ -239,3 +239,96 @@ main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
 }
+
+/* dont display any sections that are empty, this can occur with formatting in sharepoint */
+main .section:empty {
+  display: none;
+}
+
+/* specific sections */
+.section.hand-made-vs-machine-made {
+  background-color: #5d7333;
+  padding: 0;
+  max-width: 100%;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.hand-made-vs-machine-made .columns img {
+  width: auto;
+  float: left;
+  padding: 0 1.75em;
+  max-height: 330px;
+}
+
+.hand-made-vs-machine-made .columns > div {
+  align-items: start;
+}
+
+.hand-made-vs-machine-made ul {
+  overflow: hidden;
+}
+
+.hand-made-vs-machine-made ul li {
+  font-weight: 300;
+  line-height: 1.3em;
+  margin: 0 0 1em;
+}
+
+.section.cigar-pairing {
+  text-align: center;
+  font-weight: 300;
+  padding: 0 32px;
+}
+
+.cigar-pairing .columns > div > div {
+  overflow: hidden;
+}
+
+.cigar-pairing img {
+  margin: 1em 0;
+}
+
+.cigar-pairing .columns > div > div p:first-child img {
+  max-width: 152px;
+}
+
+.section.key-characteristics {
+  background-color: #d8d8d8;
+  background-image: url('/cigars-for-beginners/icons/background-smoke.jpg');
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100%;
+}
+
+.key-characteristics h2 {
+  font-weight: bold;
+  margin-bottom: 2.5em;
+}
+
+.key-characteristics h2, .key-characteristics h3, .key-characteristics em {
+  text-align: center;
+  display: block;
+}
+
+.key-characteristics p {
+  font-weight: 300;
+}
+
+.key-characteristics p em {
+  border-radius: 50%;
+  background-color: #1d1d1d;
+  color: #fff;
+  font-size: 2rem;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  margin: 0 auto 20px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.key-characteristics .columns > div {
+  align-items: start;
+}
