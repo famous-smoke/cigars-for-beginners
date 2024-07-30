@@ -271,6 +271,11 @@ main .section {
   }
 }
 
+.section.no-section-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 /* section metadata */
 main .section.light,
 main .section.highlight {
@@ -286,4 +291,63 @@ main .section.cigar-terminology {
 #cigar-terminology {
   text-align: center;
   text-transform: uppercase;
+}
+
+.section.how-cigars-are-rolled {
+  background-image: url("/cigars-for-beginners/icons/background-tobacco-leaves.png");
+  background-color: #5d7333;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: none;
+  color: #fff;
+}
+
+.how-cigars-are-rolled h3,
+.infused-cigars h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.how-cigars-are-rolled h3 {
+  padding-top: 3em;
+}
+
+.how-cigars-are-rolled .default-content-wrapper p {
+  color: #fff;
+  font-weight: 300;
+  max-width: 1020px;
+  margin: 2em auto 3em;
+}
+
+.section.infused-cigars {
+  background-image: url("/cigars-for-beginners/icons/background-infused-cigars.jpg");
+  background-color: #6a3c25;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: none;
+}
+
+.infused-cigars .default-content-wrapper {
+  text-align: center;
+}
+
+.infused-cigars p {
+  font-weight: 300;
+}
+
+.section.keep-humidified {
+  background-image: url("/cigars-for-beginners/icons/background-wood-texture2.jpg");
+  background-color: #f3efe4;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: none;
+}
+
+.keep-humidified h2 {
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 0.5em;
 }
