@@ -313,6 +313,10 @@ main .section.cigar-terminology {
   padding-top: 3em;
 }
 
+.infused-cigars p {
+  font-weight: 300;
+}
+
 .how-cigars-are-rolled .default-content-wrapper p {
   color: #fff;
   font-weight: 300;
@@ -331,10 +335,6 @@ main .section.cigar-terminology {
 
 .infused-cigars .default-content-wrapper {
   text-align: center;
-}
-
-.infused-cigars p {
-  font-weight: 300;
 }
 
 .section.keep-humidified {
