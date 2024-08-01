@@ -9,6 +9,7 @@ function getEmbed(url) {
   frame.src = url;
   frame.allow = 'autoplay; fullscreen; picture-in-picture';
   frame.allowFullscreen = true;
+  frame.autoplay = 1;
 
   return frame;
 }
@@ -34,9 +35,23 @@ function getShowHide() {
 
 export default async function decorate(block) {
   const url = block.querySelector('a');
-  const embed = getEmbed(url);
-  url.parentElement.replaceWith(embed);
 
-  const description = block.querySelector('div > div:last-child p');
+  const title = block.querySelector('h3');
+  title.className = 'video-summary-embed-title';
+
+  const img = block.querySelector('img');
+  img.className = 'video-summary-embed';
+
+  const facadeWrap = title.parentElement;
+  facadeWrap.className = 'video-summary-embed-facade';
+  facadeWrap.addEventListener('click', () => {
+    const embed = getEmbed(url.innerText);
+    facadeWrap.replaceWith(embed);
+    title.remove();
+  });
+
+  url.remove();
+
+  const description = block.querySelector(':scope > div > div:last-child p');
   description.parentElement.prepend(getShowHide());
 }
