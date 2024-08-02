@@ -5,11 +5,14 @@
  */
 function getEmbed(url) {
   const frame = document.createElement('iframe');
+
+  const frameUrl = new URL(url);
+  frameUrl.searchParams.append('autoplay', 1);
+
   frame.className = 'video-summary-embed';
-  frame.src = url;
+  frame.src = frameUrl.toString();
   frame.allow = 'autoplay; fullscreen; picture-in-picture';
   frame.allowFullscreen = true;
-  frame.autoplay = 1;
 
   return frame;
 }
