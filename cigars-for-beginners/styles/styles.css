@@ -276,6 +276,40 @@ main .section {
   padding-bottom: 0;
 }
 
+.section.bg-tobacco-leaves {
+  background-image: url("/cigars-for-beginners/icons/background-tobacco-leaves.png");
+  background-color: #5d7333;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: none;
+}
+
+.section.bg-sand {
+  background-image: url("/cigars-for-beginners/icons/background-infused-cigars.jpg");
+  background-color: #6a3c25;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: none;
+}
+
+.section.bg-wood {
+  background-image: url("/cigars-for-beginners/icons/background-wood-texture2.jpg");
+  background-color: #f3efe4;
+  background-position: left top;
+  background-size: 50%;
+  background-repeat: repeat;
+  max-width: none;
+}
+
+.section.center-title h2,
+.section.center-title h3
+{
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /* section metadata */
 main .section.light,
 main .section.highlight {
@@ -293,22 +327,6 @@ main .section.cigar-terminology {
   text-transform: uppercase;
 }
 
-.section.how-cigars-are-rolled {
-  background-image: url("/cigars-for-beginners/icons/background-tobacco-leaves.png");
-  background-color: #5d7333;
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  max-width: none;
-  color: #fff;
-}
-
-.how-cigars-are-rolled h3,
-.infused-cigars h3 {
-  text-align: center;
-  text-transform: uppercase;
-}
-
 .how-cigars-are-rolled h3 {
   padding-top: 3em;
 }
@@ -318,36 +336,11 @@ main .section.cigar-terminology {
 }
 
 .how-cigars-are-rolled .default-content-wrapper p {
-  color: #fff;
   font-weight: 300;
   max-width: 1020px;
   margin: 2em auto 3em;
 }
 
-.section.infused-cigars {
-  background-image: url("/cigars-for-beginners/icons/background-infused-cigars.jpg");
-  background-color: #6a3c25;
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  max-width: none;
-}
-
 .infused-cigars .default-content-wrapper {
   text-align: center;
-}
-
-.section.keep-humidified {
-  background-image: url("/cigars-for-beginners/icons/background-wood-texture2.jpg");
-  background-color: #f3efe4;
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  max-width: none;
-}
-
-.keep-humidified h2 {
-  font-weight: bold;
-  text-align: center;
-  padding-bottom: 0.5em;
 }
