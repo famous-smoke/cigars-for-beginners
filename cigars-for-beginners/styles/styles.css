@@ -282,11 +282,26 @@ main .section:empty {
   display: none;
 }
 
-/* specific sections */
-.section.hand-made-vs-machine-made {
+/* generic section styling */
+.section.bg-green {
   background-color: #5d7333;
-  max-width: 100%;
+}
+
+.section.text-white {
   color: #fff;
+}
+
+.section.bg-numbered-gray {
+  background-color: #d8d8d8;
+  background-image: url('/cigars-for-beginners/icons/background-smoke.jpg');
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100%;
+}
+
+.section.compare-list {
+  max-width: 100%;
   padding: 80px 0;
 }
 
@@ -294,22 +309,22 @@ main .section:empty {
   margin: 1em 0;
 }
 
-.hand-made-vs-machine-made .columns img {
+.compare-list .columns img {
   width: auto;
   float: left;
   padding: 0 1.75em;
   max-height: 330px;
 }
 
-.hand-made-vs-machine-made .columns > div {
+.compare-list .columns > div {
   align-items: start;
 }
 
-.hand-made-vs-machine-made ul {
+.compare-list ul {
   overflow: hidden;
 }
 
-.hand-made-vs-machine-made ul li {
+.compare-list ul li {
   font-weight: 300;
   line-height: 1.3em;
   margin: 0 0 1em;
@@ -321,7 +336,7 @@ main .section:empty {
   padding: 0 32px;
 }
 
-.key-characteristics .columns > div {
+.numbered-comparison .columns > div {
   align-items: start;
 }
 
@@ -333,30 +348,21 @@ main .section:empty {
   max-width: 152px;
 }
 
-.section.key-characteristics {
-  background-color: #d8d8d8;
-  background-image: url('/cigars-for-beginners/icons/background-smoke.jpg');
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  max-width: 100%;
-}
-
-.key-characteristics h2 {
+.numbered-comparison h2 {
   font-weight: bold;
   margin-bottom: 2.5em;
 }
 
-.key-characteristics h2, .key-characteristics h3, .key-characteristics em {
+.numbered-comparison h2, .numbered-comparison h3, .numbered-comparison em {
   text-align: center;
   display: block;
 }
 
-.key-characteristics p {
+.numbered-comparison p {
   font-weight: 300;
 }
 
-.key-characteristics p em {
+.numbered-comparison p em {
   border-radius: 50%;
   background-color: #1d1d1d;
   color: #fff;
@@ -369,6 +375,7 @@ main .section:empty {
   font-weight: bold;
 }
 
+/* specific sections */
 main .section.cigar-terminology {
   background: url("/cigars-for-beginners/images/terms-tabs/media_11c9563b2b00d3c3f59376737971c9a720c9689a6.jpeg");
   color: white;
