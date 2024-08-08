@@ -271,6 +271,59 @@ main .section {
   }
 }
 
+.section.no-section-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section.bg-tobacco-leaves {
+  background-image: url("/cigars-for-beginners/icons/background-tobacco-leaves.png");
+  background-color: #5d7333;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: none;
+}
+
+.section.bg-sand {
+  background-image: url("/cigars-for-beginners/icons/background-infused-cigars.jpg");
+  background-color: #6a3c25;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: none;
+}
+
+.section.bg-wood {
+  background-image: url("/cigars-for-beginners/icons/background-wood-texture2.jpg");
+  background-color: #f3efe4;
+  background-position: left top;
+  background-size: 50%;
+  background-repeat: repeat;
+  max-width: none;
+}
+
+.how-cigars-are-rolled h3 {
+  padding-top: 3em;
+}
+
+.numbered-comparison h2 {
+  font-weight: bold;
+  margin-bottom: 2.5em;
+}
+
+.numbered-comparison h2, .numbered-comparison h3, .numbered-comparison em {
+  text-align: center;
+  display: block;
+}
+
+.section.center-title h2,
+.section.center-title h3
+{
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /* section metadata */
 main .section.light,
 main .section.highlight {
@@ -348,16 +401,6 @@ main .section:empty {
   max-width: 152px;
 }
 
-.numbered-comparison h2 {
-  font-weight: bold;
-  margin-bottom: 2.5em;
-}
-
-.numbered-comparison h2, .numbered-comparison h3, .numbered-comparison em {
-  text-align: center;
-  display: block;
-}
-
 .numbered-comparison p {
   font-weight: 300;
 }
@@ -385,4 +428,18 @@ main .section.cigar-terminology {
 #cigar-terminology {
   text-align: center;
   text-transform: uppercase;
+}
+
+.infused-cigars p {
+  font-weight: 300;
+}
+
+.how-cigars-are-rolled .default-content-wrapper p {
+  font-weight: 300;
+  max-width: 1020px;
+  margin: 2em auto 3em;
+}
+
+.infused-cigars .default-content-wrapper {
+  text-align: center;
 }
