@@ -303,6 +303,10 @@ main .section {
   max-width: none;
 }
 
+.how-cigars-are-rolled h3 {
+  padding-top: 3em;
+}
+
 .section.center-title h2,
 .section.center-title h3
 {
@@ -325,10 +329,6 @@ main .section.cigar-terminology {
 #cigar-terminology {
   text-align: center;
   text-transform: uppercase;
-}
-
-.how-cigars-are-rolled h3 {
-  padding-top: 3em;
 }
 
 .infused-cigars p {
