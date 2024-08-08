@@ -1,0 +1,14 @@
+.alternating-colors > div {
+  margin-bottom: 20px;
+  padding: 25px;
+  background-color: rgb(242 251 255);
+}
+
+.alternating-colors > div:nth-child(2n+2) {
+  background-color: rgb(244 242 255);
+}
+
+.alternating-colors div h4 {
+  text-align: left;
+  margin-bottom: 12px;
+}
