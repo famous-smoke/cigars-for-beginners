@@ -277,6 +277,105 @@ main .section.highlight {
   background-color: var(--light-color);
 }
 
+/* dont display any sections that are empty, this can occur with formatting in sharepoint */
+main .section:empty {
+  display: none;
+}
+
+/* generic section styling */
+.section.bg-green {
+  background-color: #5d7333;
+}
+
+.section.text-white {
+  color: #fff;
+}
+
+.section.bg-numbered-gray {
+  background-color: #d8d8d8;
+  background-image: url('/cigars-for-beginners/icons/background-smoke.jpg');
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 100%;
+}
+
+.section.compare-list {
+  max-width: 100%;
+  padding: 80px 0;
+}
+
+.cigar-pairing img {
+  margin: 1em 0;
+}
+
+.compare-list .columns img {
+  width: auto;
+  float: left;
+  padding: 0 1.75em;
+  max-height: 330px;
+}
+
+.compare-list .columns > div {
+  align-items: start;
+}
+
+.compare-list ul {
+  overflow: hidden;
+}
+
+.compare-list ul li {
+  font-weight: 300;
+  line-height: 1.3em;
+  margin: 0 0 1em;
+}
+
+.section.cigar-pairing {
+  text-align: center;
+  font-weight: 300;
+  padding: 0 32px;
+}
+
+.numbered-comparison .columns > div {
+  align-items: start;
+}
+
+.cigar-pairing .columns > div > div {
+  overflow: hidden;
+}
+
+.cigar-pairing .columns > div > div p:first-child img {
+  max-width: 152px;
+}
+
+.numbered-comparison h2 {
+  font-weight: bold;
+  margin-bottom: 2.5em;
+}
+
+.numbered-comparison h2, .numbered-comparison h3, .numbered-comparison em {
+  text-align: center;
+  display: block;
+}
+
+.numbered-comparison p {
+  font-weight: 300;
+}
+
+.numbered-comparison p em {
+  border-radius: 50%;
+  background-color: #1d1d1d;
+  color: #fff;
+  font-size: 2rem;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  margin: 0 auto 20px;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* specific sections */
 main .section.cigar-terminology {
   background: url("/cigars-for-beginners/images/terms-tabs/media_11c9563b2b00d3c3f59376737971c9a720c9689a6.jpeg");
   color: white;
