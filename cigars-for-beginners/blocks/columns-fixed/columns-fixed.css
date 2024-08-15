@@ -1,0 +1,73 @@
+.columns-fixed {
+    padding: 2em 0;
+}
+
+.columns-fixed > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.columns-fixed .header {
+    display: none;
+}
+
+.section.comparison-table .columns-fixed > div {
+    border-top: solid 2px #ccc;
+}
+
+.section.comparison-table .columns-fixed .header {
+    font-weight: bold;
+    font-size: 0.7em;
+}
+
+.section.comparison-table .columns-fixed > div > div em {
+    border: 1px solid #000;
+    border-radius: 50%;
+    padding: 0.5em;
+    font-style: normal;
+}
+
+.section.comparison-table .columns-fixed p {
+    font-weight: 600;
+}
+
+@media (min-width: 900px) {
+    .columns-fixed > div {
+        align-items: center;
+        flex-direction: unset;
+        gap: 32px;
+    }
+
+    .columns-fixed > div > div {
+        order: unset;
+    }
+
+    .columns-fixed .header {
+        display: flex;
+    }
+
+    .section.comparison-table .columns-fixed > div {
+        border: none;
+    }
+
+    .section.comparison-table .columns-fixed img {
+        height: 64px;
+        padding-top: 1em;
+    }
+
+    .section.comparison-table .columns-fixed > div > div u {
+        display: none;
+    }
+}
+
+@media (max-width: 899px) {
+    .columns-fixed > div > div {
+        order: 1;
+        width: 100% !important;
+    }
+
+    .section.comparison-table .columns-fixed > div > div u {
+        display: inline;
+        text-decoration: none;
+    }
+}
