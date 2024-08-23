@@ -375,6 +375,14 @@ main .section:empty {
   overflow: visible;
 }
 
+.wrapper-tabs .tabs .tabs-panel img {
+  border-radius: 50%;
+}
+
+.cigar-pairing .columns > div > div p:first-child img {
+  max-width: 152px;
+}
+
 .humi-tabs .tabs .tabs-list img:hover {
   transform: scale(1.1);
 }
@@ -385,10 +393,6 @@ main .section:empty {
   box-shadow:
       0 0 0 7px #d8d8d8,  /* First outline: 7px, blue */
       0 0 0 8px #333; /* Second outline: 1px, green */
-}
-
-.wrapper-tabs .tabs .tabs-panel img {
-  border-radius: 50%;
 }
 
 .compare-list .columns > div {
@@ -417,10 +421,6 @@ main .section:empty {
 
 .cigar-pairing .columns > div > div {
   overflow: hidden;
-}
-
-.cigar-pairing .columns > div > div p:first-child img {
-  max-width: 152px;
 }
 
 .numbered-comparison p {
