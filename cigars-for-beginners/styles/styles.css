@@ -443,3 +443,114 @@ main .section.cigar-terminology {
 .infused-cigars .default-content-wrapper {
   text-align: center;
 }
+
+.wrapper-tabs .default-content-wrapper {
+  text-align: center;
+}
+
+.wrapper-tabs .tabs .tabs-list {
+  display: inline;
+  max-width: 100%;
+  font-size: var(--body-font-size-xs);
+  overflow-x: auto;
+}
+
+.wrapper-tabs .tabs .tabs-list button {
+  display: inline-grid;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0 0 50px 0;
+  background-color: transparent;
+  color: initial;
+  font-weight: bold;
+  line-height: unset;
+  text-overflow: unset;
+  overflow: unset;
+  white-space: unset;
+  transition: background-color 0.2s;
+  text-align: center;
+  width: 14.285714%;
+}
+
+.wrapper-tabs .tabs .tabs-list button[aria-selected='true'] {
+  border-bottom: 0;
+  background-color: transparent;
+  cursor: initial;
+}
+
+.wrapper-tabs .tabs .tabs-list button[aria-selected='true'] img {
+  position: relative;
+  z-index: 35;
+  box-shadow:
+      0 0 0 7px #d8d8d8,  /* First outline: 7px, blue */
+      0 0 0 8px #333; /* Second outline: 1px, green */
+}
+
+.wrapper-tabs .tabs .tabs-panel {
+  margin-top: -1px;
+  padding: 0;
+  border: 0;
+  overflow: auto;
+}
+
+.wrapper-tabs .tabs .tabs-panel p {
+  float: left;
+}
+
+.wrapper-tabs .tabs .tabs-panel ul {
+  margin-left: 225px;
+}
+
+.wrapper-tabs .tabs .tabs-panel h4 {
+  margin-left: 225px;
+}
+
+.wrapper-tabs .tabs .tabs-panel img {
+  border-radius: 50%;
+}
+
+.wrapper-tabs .default-content-wrapper {
+  text-align: center;
+}
+
+.humi-tabs .tabs .tabs-list {
+  display: inline;
+  max-width: 100%;
+  font-size: var(--body-font-size-xs);
+  overflow-x: auto;
+}
+
+.humi-tabs .tabs .tabs-list button {
+  border: 0;
+  background-color: transparent;
+  width: 20%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.humi-tabs .tabs .tabs-list img {
+  height: 120px;
+  margin-bottom: 8px;
+  overflow: visible;
+}
+
+.humi-tabs .tabs .tabs-list img:hover {
+  transform: scale(1.1);
+}
+
+.humi-tabs .tabs .tabs-list button[aria-selected='true'] {
+  border-bottom: 0;
+  cursor: initial;
+  background: url("/cigars-for-beginners/images/media_14bd13a9db54810d16ac3a87e78aeacd08d800a20.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.humi-tabs .tabs .tabs-panel {
+  background: white;
+}
+
