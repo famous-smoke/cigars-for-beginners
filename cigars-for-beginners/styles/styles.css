@@ -369,6 +369,28 @@ main .section:empty {
   max-height: 330px;
 }
 
+.humi-tabs .tabs .tabs-list img {
+  height: 120px;
+  margin-bottom: 8px;
+  overflow: visible;
+}
+
+.humi-tabs .tabs .tabs-list img:hover {
+  transform: scale(1.1);
+}
+
+.wrapper-tabs .tabs .tabs-list button[aria-selected='true'] img {
+  position: relative;
+  z-index: 35;
+  box-shadow:
+      0 0 0 7px #d8d8d8,  /* First outline: 7px, blue */
+      0 0 0 8px #333; /* Second outline: 1px, green */
+}
+
+.wrapper-tabs .tabs .tabs-panel img {
+  border-radius: 50%;
+}
+
 .compare-list .columns > div {
   align-items: start;
 }
@@ -460,7 +482,7 @@ main .section.cigar-terminology {
   margin: 0;
   border: 0;
   border-radius: 0;
-  padding: 0 0 50px 0;
+  padding: 0 0 50px;
   background-color: transparent;
   color: initial;
   font-weight: bold;
@@ -470,21 +492,13 @@ main .section.cigar-terminology {
   white-space: unset;
   transition: background-color 0.2s;
   text-align: center;
-  width: 14.285714%;
+  width: 14.2857%;
 }
 
 .wrapper-tabs .tabs .tabs-list button[aria-selected='true'] {
   border-bottom: 0;
   background-color: transparent;
   cursor: initial;
-}
-
-.wrapper-tabs .tabs .tabs-list button[aria-selected='true'] img {
-  position: relative;
-  z-index: 35;
-  box-shadow:
-      0 0 0 7px #d8d8d8,  /* First outline: 7px, blue */
-      0 0 0 8px #333; /* Second outline: 1px, green */
 }
 
 .wrapper-tabs .tabs .tabs-panel {
@@ -506,14 +520,6 @@ main .section.cigar-terminology {
   margin-left: 225px;
 }
 
-.wrapper-tabs .tabs .tabs-panel img {
-  border-radius: 50%;
-}
-
-.wrapper-tabs .default-content-wrapper {
-  text-align: center;
-}
-
 .humi-tabs .tabs .tabs-list {
   display: inline;
   max-width: 100%;
@@ -530,16 +536,6 @@ main .section.cigar-terminology {
   overflow: hidden;
   padding-top: 20px;
   padding-bottom: 40px;
-}
-
-.humi-tabs .tabs .tabs-list img {
-  height: 120px;
-  margin-bottom: 8px;
-  overflow: visible;
-}
-
-.humi-tabs .tabs .tabs-list img:hover {
-  transform: scale(1.1);
 }
 
 .humi-tabs .tabs .tabs-list button[aria-selected='true'] {
