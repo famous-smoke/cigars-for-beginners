@@ -27,6 +27,21 @@ export default function decorate(block) {
     // eslint-disable-next-line no-plusplus
     for (let j = 0; j < rows[i].children.length; j++) {
       rows[i].children[j].style.width = colWidths[j];
+
+      // set picture widths for columns containing only a picture and a width
+      const children = rows[i].children[j].firstElementChild.childNodes;
+      let img = null;
+      // eslint-disable-next-line no-plusplus
+      for (let k = 0; k < children.length; k++) {
+        if (children[k].tagName === 'PICTURE') {
+          img = children[k].lastElementChild;
+        } else if (img && children[k].textContent.startsWith('|')) {
+          // eslint-disable-next-line max-len
+          img.style.width = children[k].textContent.substring(1, children[k].textContent.length).trim();
+          children[k].textContent = '';
+          break;
+        }
+      }
     }
   }
 }
