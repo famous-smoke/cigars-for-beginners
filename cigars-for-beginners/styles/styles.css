@@ -520,6 +520,37 @@ main .section.cigar-terminology {
   margin-left: 225px;
 }
 
+@media (max-width: 500px) {
+  .wrapper-tabs .tabs .tabs-list p:nth-child(2) {
+    display: none;
+  }
+
+  .wrapper-tabs .tabs .tabs-panel p {
+    float: none;
+    text-align: center;
+  }
+
+  .wrapper-tabs .tabs .tabs-panel ul {
+    margin: 0 auto;
+  }
+
+  .wrapper-tabs .tabs .tabs-panel h4 {
+    margin: 0 auto;
+  }
+
+  .wrapper-tabs .tabs .tabs-panel img {
+    float: none;
+    width: 50%;
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+
+  .wrapper-tabs .tabs .tabs-list button {
+    padding-bottom: 10px;
+  }
+}
+
 .humi-tabs .tabs .tabs-list {
   display: inline;
   max-width: 100%;
