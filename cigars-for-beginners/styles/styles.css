@@ -344,6 +344,14 @@ main .section:empty {
   color: #fff;
 }
 
+.infused-cigars .default-content-wrapper {
+  text-align: center;
+}
+
+.section.center-text .default-content-wrapper {
+  text-align: center;
+}
+
 .section.bg-numbered-gray {
   background-color: #d8d8d8;
   background-image: url('/cigars-for-beginners/icons/background-smoke.jpg');
@@ -462,10 +470,6 @@ main .section.cigar-terminology {
   margin: 2em auto 3em;
 }
 
-.infused-cigars .default-content-wrapper {
-  text-align: center;
-}
-
 .wrapper-tabs .default-content-wrapper {
   text-align: center;
 }
@@ -580,4 +584,3 @@ main .section.cigar-terminology {
 .humi-tabs .tabs .tabs-panel {
   background: white;
 }
-
