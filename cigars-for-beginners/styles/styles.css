@@ -348,6 +348,10 @@ main .section:empty {
   text-align: center;
 }
 
+.wrapper-tabs .default-content-wrapper {
+  text-align: center;
+}
+
 .section.center-text .default-content-wrapper {
   text-align: center;
 }
@@ -470,10 +474,6 @@ main .section.cigar-terminology {
   margin: 2em auto 3em;
 }
 
-.wrapper-tabs .default-content-wrapper {
-  text-align: center;
-}
-
 .wrapper-tabs .tabs .tabs-list {
   display: inline;
   max-width: 100%;
@@ -525,15 +525,15 @@ main .section.cigar-terminology {
 }
 
 @media (max-width: 500px) {
-  .wrapper-tabs .tabs .tabs-list p:nth-child(2) {
-    display: none;
-  }
-
   .wrapper-tabs .tabs .tabs-panel p {
     float: none;
     text-align: center;
   }
 
+  .wrapper-tabs .tabs .tabs-list p:nth-child(2) {
+    display: none;
+  }
+  
   .wrapper-tabs .tabs .tabs-panel ul {
     margin: 0 auto;
   }
@@ -547,7 +547,7 @@ main .section.cigar-terminology {
     width: 50%;
     max-width: 150px;
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 20px;
   }
 
   .wrapper-tabs .tabs .tabs-list button {
