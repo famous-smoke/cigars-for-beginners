@@ -1,6 +1,59 @@
 import { getMetadata, createOptimizedPicture } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-import { isInternal } from '../../scripts/scripts.js';
+import { isInternal, fetchArticleInfo } from '../../scripts/scripts.js';
+import { addLdJsonScript } from '../../scripts/linking-data.js';
+
+async function buildLdJson(container) {
+  // Base page LD+JSON
+  const ldJson = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': window.location.href,
+    url: window.location.href,
+    description: getMetadata('description'),
+    publisher: {
+      '@type': 'Organization',
+      '@id': 'https://www.famous-smoke.com',
+      'name': 'Famous Smoke Shop',
+      "url": "https://www.famous-smoke.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "logo": "https://www.famous-smoke.com/cigars-for-beginners/icons/logo.png",
+        "width": 147,
+        "height": 62
+      }
+    },
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": [
+        "https://www.famous-smoke.com/cigars-for-beginners/"
+      ]
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.famous-smoke.com/cigars-for-beginners/"
+    },
+    inLanguage: 'en-US',
+  };
+
+  // Add image from metadata
+  const primaryImage = getMetadata('og:image');
+  if (primaryImage) {
+    ldJson.primaryImageOfPage = {
+      '@type': 'ImageObject',
+      contentUrl: getMetadata('og:image'),
+    };
+  }
+
+  // Add dateModified
+  const articleInfo = await fetchArticleInfo();
+  if (articleInfo) {
+    ldJson.dateModified = dateToISOString(articleInfo.lastModified);
+    ldJson.datePublished = dateToISOString(articleInfo.publishedDate);
+  }
+
+  addLdJsonScript(container, ldJson);
+}
 
 // generate the famous logo html
 function getFamousLogo() {
@@ -108,6 +161,37 @@ function addTrueVaultOptOut(footer) {
   addLinkToFooter(privacyChoicesLink, separator, footer);
 }
 
+function dateToISOString(input) {
+  let date;
+
+  try {
+    // Check if the input is a number (Unix timestamp)
+    if (typeof input === 'number') {
+      date = new Date(input * 1000);
+    } else if (typeof input === 'string') {
+      // Check if the string is a Unix timestamp
+      if (/^\d+$/.test(input)) {
+        date = new Date(parseInt(input, 10) * 1000);
+      } else {
+        // Otherwise, assume it's a date string
+        date = new Date(input);
+      }
+    } else {
+      return null; // Return null if the input is neither a number nor a string
+    }
+
+    // Check if the date is valid
+    if (date.isNaN) {
+      return null;
+    }
+    // Convert the Date object to ISO string format
+    return date.toISOString();
+  } catch (error) {
+    // Return null if there is an error
+    return null;
+  }
+}
+
 /**
  * loads and decorates
 
@@ -125,6 +209,9 @@ export default async function decorate(block) {
   block.textContent = '';
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+
+  // add json-ld data for the page
+  buildLdJson(document.body);
 
   // Add the Famous logo
   footer.prepend(getFamousLogo());
