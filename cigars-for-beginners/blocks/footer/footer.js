@@ -48,21 +48,21 @@ async function buildLdJson(container) {
       name: 'Famous Smoke Shop',
       url: 'https://www.famous-smoke.com/',
       logo: {
-        "@type": 'ImageObject',
+        '@type': 'ImageObject',
         logo: 'https://www.famous-smoke.com/cigars-for-beginners/icons/logo.png',
         width: 147,
         height: 62,
-      }
+      },
     },
     potentialAction: {
-      "@type": "ReadAction",
+      '@type': "ReadAction",
       target: [
         'https://www.famous-smoke.com/cigars-for-beginners/',
-      ]
+      ],
     },
     mainEntityOfPage: {
-      "@type": 'WebPage',
-      "@id": 'https://www.famous-smoke.com/cigars-for-beginners/',
+      '@type': 'WebPage',
+      '@id': 'https://www.famous-smoke.com/cigars-for-beginners/',
     },
     inLanguage: 'en-US',
   };
