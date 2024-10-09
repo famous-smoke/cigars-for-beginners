@@ -15,7 +15,8 @@ export async function fetchArticleList() {
       const resp = await fetch(ARTICLE_INDEX_PATH);
       if (resp.ok) {
         const jsonData = await resp.json();
-        articleIndexData = jsonData.data.map((item) => ({ path: item.path, title: item.title, lastModified: item.lastModified, publishedDate: item.published, image: item.image }));
+        articleIndexData = jsonData.data.map((item) =>
+          ({ path: item.path, title: item.title, lastModified: item.lastModified, publishedDate: item.published, image: item.image }));
       } else {
         // eslint-disable-next-line no-console
         console.error('Failed to fetch article list:', resp.status);
