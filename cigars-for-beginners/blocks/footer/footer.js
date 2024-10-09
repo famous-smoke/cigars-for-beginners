@@ -55,7 +55,7 @@ async function buildLdJson(container) {
       },
     },
     potentialAction: {
-      '@type': "ReadAction",
+      '@type': 'ReadAction',
       target: [
         'https://www.famous-smoke.com/cigars-for-beginners/',
       ],

@@ -20,7 +20,7 @@ export async function fetchArticleList() {
           title: item.title,
           lastModified: item.lastModified,
           publishedDate: item.published,
-          image: item.image
+          image: item.image,
         }));
       } else {
         // eslint-disable-next-line no-console
