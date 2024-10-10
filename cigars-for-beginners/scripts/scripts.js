@@ -1,6 +1,59 @@
 import { sampleRUM, buildBlock, loadHeader, loadFooter, decorateButtons, decorateIcons, decorateSections, decorateBlocks, decorateTemplateAndTheme, waitForLCP, loadBlocks, loadCSS } from './aem.js';
 
 const LCP_BLOCKS = ['header', 'hero']; // add your LCP blocks to the list
+const ARTICLE_INDEX_PATH = '/cigars-for-beginners/index/query-index.json';
+
+let articleIndexData;
+
+/**
+ * Fetches article list.
+ * @returns {Promise<Array<Object>>} - A promise that resolves to an array of article path objects.
+ */
+export async function fetchArticleList() {
+  if (!articleIndexData) {
+    try {
+      const resp = await fetch(ARTICLE_INDEX_PATH);
+      if (resp.ok) {
+        const jsonData = await resp.json();
+        articleIndexData = jsonData.data.map((item) => ({
+          path: item.path,
+          title: item.title,
+          lastModified: item.lastModified,
+          publishedDate: item.published,
+          image: item.image,
+        }));
+      } else {
+        // eslint-disable-next-line no-console
+        console.error('Failed to fetch article list:', resp.status);
+        return [];
+      }
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('Error article list:', error);
+      return [];
+    }
+  }
+  return articleIndexData;
+}
+
+/**
+ * Fetches article information.
+ * @returns {Promise<Array<Object>>} - A promise that resolves to an array of article path objects.
+ */
+export async function fetchArticleInfo() {
+  // Fetch article list
+  if (!articleIndexData) {
+    articleIndexData = await fetchArticleList();
+  }
+
+  // Get the current URL path
+  const currentPath = window.location.pathname;
+
+  // Find the article that matches the current URL path
+  const matchingArticle = articleIndexData.find((article) => article.path === currentPath);
+
+  return matchingArticle || null;
+}
 
 // Function to check if an element is in the viewport
 function isInViewport(element) {
