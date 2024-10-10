@@ -38,11 +38,12 @@ async function buildLdJson(container) {
   // Base page LD+JSON
   const ldJson = {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
+    '@type': 'Article',
     '@id': window.location.href,
     url: window.location.href,
+    headline: getMetadata('og:title'),
     description: getMetadata('description'),
-    publisher: {
+    author: {
       '@type': 'Organization',
       '@id': 'https://www.famous-smoke.com',
       name: 'Famous Smoke Shop',
@@ -70,10 +71,7 @@ async function buildLdJson(container) {
   // Add image from metadata
   const primaryImage = getMetadata('og:image');
   if (primaryImage) {
-    ldJson.primaryImageOfPage = {
-      '@type': 'ImageObject',
-      contentUrl: getMetadata('og:image'),
-    };
+    ldJson.image = getMetadata('og:image');
   }
 
   // Add dateModified
