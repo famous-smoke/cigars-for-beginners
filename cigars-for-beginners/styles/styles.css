@@ -174,7 +174,7 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: background .2s;
+  transition: background 0.2s;
 }
 
 a.button:any-link::after {
@@ -215,7 +215,7 @@ button.secondary {
 
 a.button.secondary:hover,
 a.button.secondary:focus,
-button.secondary:hover
+button.secondary:hover,
 button.secondary:focus {
   background-color: var(--text-color);
   border-color: var(--text-color);
@@ -277,7 +277,7 @@ main .section {
 }
 
 .section.bg-tobacco-leaves {
-  background-image: url("/cigars-for-beginners/icons/background-tobacco-leaves.png");
+  background-image: url('/cigars-for-beginners/icons/background-tobacco-leaves.png');
   background-color: #5d7333;
   background-position: left top;
   background-size: cover;
@@ -286,7 +286,7 @@ main .section {
 }
 
 .section.bg-sand {
-  background-image: url("/cigars-for-beginners/icons/background-infused-cigars.jpg");
+  background-image: url('/cigars-for-beginners/icons/background-infused-cigars.jpg');
   background-color: #6a3c25;
   background-position: left top;
   background-size: cover;
@@ -295,7 +295,7 @@ main .section {
 }
 
 .section.bg-wood {
-  background-image: url("/cigars-for-beginners/icons/background-wood-texture2.jpg");
+  background-image: url('/cigars-for-beginners/icons/background-wood-texture2.jpg');
   background-color: #f3efe4;
   background-position: left top;
   background-size: 50%;
@@ -312,16 +312,25 @@ main .section {
   margin-bottom: 2.5em;
 }
 
-.numbered-comparison h2, .numbered-comparison h3, .numbered-comparison em {
+.numbered-comparison h2,
+.numbered-comparison h3,
+.numbered-comparison em {
   text-align: center;
   display: block;
 }
 
 .section.center-title h2,
-.section.center-title h3
-{
+.section.center-title h3 {
   text-align: center;
   text-transform: uppercase;
+}
+
+.header-margin-bottom .header {
+  margin-bottom: 40px;
+}
+
+.section.bold-header .header {
+  font-weight: bold;
 }
 
 /* section metadata */
@@ -402,9 +411,7 @@ main .section:empty {
 .wrapper-tabs .tabs .tabs-list button[aria-selected='true'] img {
   position: relative;
   z-index: 35;
-  box-shadow:
-      0 0 0 7px #d8d8d8,  /* First outline: 7px, blue */
-      0 0 0 8px #333; /* Second outline: 1px, green */
+  box-shadow: 0 0 0 7px #d8d8d8, /* First outline: 7px, blue */ 0 0 0 8px #333; /* Second outline: 1px, green */
 }
 
 .compare-list .columns > div {
@@ -454,7 +461,7 @@ main .section:empty {
 
 /* specific sections */
 main .section.cigar-terminology {
-  background: url("/cigars-for-beginners/images/terms-tabs/media_11c9563b2b00d3c3f59376737971c9a720c9689a6.jpeg");
+  background: url('/cigars-for-beginners/images/terms-tabs/media_11c9563b2b00d3c3f59376737971c9a720c9689a6.jpeg');
   color: white;
   width: 100%;
 }
@@ -533,7 +540,7 @@ main .section.cigar-terminology {
   .wrapper-tabs .tabs .tabs-list p:nth-child(2) {
     display: none;
   }
-  
+
   .wrapper-tabs .tabs .tabs-panel ul {
     margin: 0 auto;
   }
@@ -576,7 +583,7 @@ main .section.cigar-terminology {
 .humi-tabs .tabs .tabs-list button[aria-selected='true'] {
   border-bottom: 0;
   cursor: initial;
-  background: url("/cigars-for-beginners/images/media_14bd13a9db54810d16ac3a87e78aeacd08d800a20.png");
+  background: url('/cigars-for-beginners/images/media_14bd13a9db54810d16ac3a87e78aeacd08d800a20.png');
   background-position: center bottom;
   background-repeat: no-repeat;
 }
