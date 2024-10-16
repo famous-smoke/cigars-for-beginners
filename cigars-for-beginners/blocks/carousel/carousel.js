@@ -1,5 +1,9 @@
 import { fetchPlaceholders } from '../../scripts/aem.js';
 
+const NUM_SHOW_HIDE_WORDS_MOBILE = 12;
+const NUM_SHOW_HIDE_WORDS_DESKTOP = 33;
+let displayReadMore = true;
+
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
@@ -60,14 +64,39 @@ function bindEvents(block) {
     showSlide(block, parseInt(block.dataset.activeSlide, 10) + 1);
   });
 
-  const slideObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) updateActiveSlide(entry.target);
-    });
-  }, { threshold: 0.5 });
+  const slideObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) updateActiveSlide(entry.target);
+      });
+    },
+    // eslint-disable-next-line comma-dangle
+    { threshold: 0.5 }
+  );
+
   block.querySelectorAll('.carousel-slide').forEach((slide) => {
     slideObserver.observe(slide);
   });
+}
+
+// eslint-disable-next-line max-len
+const numShowHideWords = window.innerWidth < 600 ? NUM_SHOW_HIDE_WORDS_MOBILE : NUM_SHOW_HIDE_WORDS_DESKTOP;
+
+// Function to toggle text visibility
+function toggleText(span, link, words, container) {
+  if (span.classList.contains('hidden-text')) {
+    span.classList.remove('hidden-text');
+    span.classList.add('show-more');
+    link.textContent = ' Read Less';
+    span.previousSibling.textContent = words.join(' ');
+    container.classList.add('show-more'); // Add this line to allow scrolling
+  } else {
+    span.classList.add('hidden-text');
+    span.classList.remove('show-more');
+    link.textContent = ' ...Read More';
+    span.previousSibling.textContent = `${words.slice(0, numShowHideWords).join(' ')}...`;
+    container.classList.remove('show-more'); // Add this line to disable scrolling
+  }
 }
 
 function createSlide(row, slideIndex, carouselId) {
@@ -77,7 +106,41 @@ function createSlide(row, slideIndex, carouselId) {
   slide.classList.add('carousel-slide');
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
-    column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
+    const carouselSlideClass = `carousel-slide-${colIdx === 0 ? 'image' : 'content'}`;
+    column.classList.add(carouselSlideClass);
+    if (carouselSlideClass === 'carousel-slide-content') {
+      const p = column.querySelector('p');
+      const pId = `p-carousel-${carouselId}-slide-${slideIndex}`;
+      p.id = pId;
+
+      if (displayReadMore) {
+        // Split the text into words
+        const words = p.textContent.split(' ');
+        const visibleWords = words.slice(0, numShowHideWords).join(' ');
+        const hiddenWords = words.slice(numShowHideWords).join(' ');
+        p.textContent = `${visibleWords}...`;
+
+        // Add hidden words to span
+        const span = document.createElement('span');
+        span.className = 'hidden-text';
+        span.textContent = ` ${hiddenWords}`;
+        p.appendChild(span);
+
+        // Add read more/less link
+        const link = document.createElement('a');
+        link.href = '#';
+        link.onclick = () => {
+          toggleText(span, link, words, column);
+          return false;
+        };
+        link.textContent = '...Read More';
+
+        // Append the link after the paragraph
+        p.parentNode.insertBefore(link, p.nextSibling);
+      } else {
+        column.classList.add('show-more');
+      }
+    }
     slide.append(column);
   });
 
@@ -93,6 +156,7 @@ let carouselId = 0;
 export default async function decorate(block) {
   carouselId += 1;
   block.setAttribute('id', `carousel-${carouselId}`);
+  displayReadMore = !block.classList.contains('no-readmore');
   const rows = block.querySelectorAll(':scope > div');
   const isSingleSlide = rows.length < 2;
 
@@ -135,7 +199,7 @@ export default async function decorate(block) {
       const indicator = document.createElement('li');
       indicator.classList.add('carousel-slide-indicator');
       indicator.dataset.targetSlide = idx;
-      indicator.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}"></button>`;
+      indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}</span></button>`;
       slideIndicators.append(indicator);
     }
     row.remove();
