@@ -251,7 +251,7 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  padding: 16px 8px;
   max-width: var(--content-width);
   margin: 0 auto;
   word-wrap: break-word;
@@ -259,7 +259,7 @@ main .section {
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 16px 8px;
   }
 }
 

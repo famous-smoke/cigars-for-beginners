@@ -1,7 +1,3 @@
-.columns-fixed {
-  padding: 2em 0;
-}
-
 .columns-fixed > div {
   display: flex;
   flex-direction: column;
@@ -11,13 +7,13 @@
   display: none;
 }
 
-.columns-fixed.align-top > div {
+.columns-fixed.align-top > div:not(.header) {
   display: flex;
   align-items: flex-start;
   height: 100%;
 }
 
-.columns-fixed.align-bottom > div {
+.columns-fixed.align-bottom > div:not(.header) {
   display: flex;
   align-items: flex-end;
   height: 100%;
@@ -26,15 +22,6 @@
 .columns-fixed.align-bottom picture,
 .columns-fixed.align-top picture {
   display: block;
-}
-
-.columns-fixed.on-hover-expand-image picture {
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.columns-fixed.on-hover-expand-image picture:hover {
-  transform: scale(1.1);
 }
 
 .section.comparison-table .columns-fixed > div {
@@ -57,6 +44,25 @@
   font-weight: 600;
 }
 
+/* Styles that apply only when 'shrink-to-fit' is present */
+.columns-fixed.shrink-to-fit > div:not(.header) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.columns-fixed.shrink-to-fit > div > div {
+  flex: 1 1 auto;
+  width: auto !important; /* Override inline widths */
+}
+
+.columns-fixed.shrink-to-fit img {
+  max-width: 100%;
+  height: auto;
+  max-width: 55px;
+}
+
+/* For screens wider than 900px */
 @media (min-width: 900px) {
   .columns-fixed > div {
     align-items: center;
@@ -84,8 +90,27 @@
   .section.comparison-table .columns-fixed > div > div u {
     display: none;
   }
+
+  .columns-fixed.shrink-to-fit > div {
+    align-items: center;
+    gap: 32px;
+  }
+
+  .columns-fixed.shrink-to-fit .header {
+    display: flex;
+  }
+
+  .columns-fixed.on-hover-expand-image picture {
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .columns-fixed.on-hover-expand-image picture:hover {
+    transform: scale(1.1);
+  }
 }
 
+/* For screens narrower than 900px */
 @media (max-width: 899px) {
   .columns-fixed > div > div {
     order: 1;
