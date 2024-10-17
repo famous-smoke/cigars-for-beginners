@@ -2,6 +2,7 @@ import { fetchPlaceholders } from '../../scripts/aem.js';
 
 const NUM_SHOW_HIDE_WORDS_MOBILE = 12;
 const NUM_SHOW_HIDE_WORDS_DESKTOP = 33;
+let displayReadMore = true;
 
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel');
@@ -112,29 +113,33 @@ function createSlide(row, slideIndex, carouselId) {
       const pId = `p-carousel-${carouselId}-slide-${slideIndex}`;
       p.id = pId;
 
-      // Split the text into words
-      const words = p.textContent.split(' ');
-      const visibleWords = words.slice(0, numShowHideWords).join(' ');
-      const hiddenWords = words.slice(numShowHideWords).join(' ');
-      p.textContent = `${visibleWords}...`;
+      if (displayReadMore) {
+        // Split the text into words
+        const words = p.textContent.split(' ');
+        const visibleWords = words.slice(0, numShowHideWords).join(' ');
+        const hiddenWords = words.slice(numShowHideWords).join(' ');
+        p.textContent = `${visibleWords}...`;
 
-      // Add hidden words to span
-      const span = document.createElement('span');
-      span.className = 'hidden-text';
-      span.textContent = ` ${hiddenWords}`;
-      p.appendChild(span);
+        // Add hidden words to span
+        const span = document.createElement('span');
+        span.className = 'hidden-text';
+        span.textContent = ` ${hiddenWords}`;
+        p.appendChild(span);
 
-      // Add read more/less link
-      const link = document.createElement('a');
-      link.href = '#';
-      link.onclick = () => {
-        toggleText(span, link, words, column);
-        return false;
-      };
-      link.textContent = '...Read More';
+        // Add read more/less link
+        const link = document.createElement('a');
+        link.href = '#';
+        link.onclick = () => {
+          toggleText(span, link, words, column);
+          return false;
+        };
+        link.textContent = '...Read More';
 
-      // Append the link after the paragraph
-      p.parentNode.insertBefore(link, p.nextSibling);
+        // Append the link after the paragraph
+        p.parentNode.insertBefore(link, p.nextSibling);
+      } else {
+        column.classList.add('show-more');
+      }
     }
     slide.append(column);
   });
@@ -151,6 +156,7 @@ let carouselId = 0;
 export default async function decorate(block) {
   carouselId += 1;
   block.setAttribute('id', `carousel-${carouselId}`);
+  displayReadMore = !block.classList.contains('no-readmore');
   const rows = block.querySelectorAll(':scope > div');
   const isSingleSlide = rows.length < 2;
 

@@ -171,7 +171,6 @@ button {
   cursor: pointer;
   color: var(--background-color);
   background-color: var(--button-color);
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   transition: background .2s;
@@ -533,7 +532,7 @@ main .section.cigar-terminology {
   .wrapper-tabs .tabs .tabs-list p:nth-child(2) {
     display: none;
   }
-  
+
   .wrapper-tabs .tabs .tabs-panel ul {
     margin: 0 auto;
   }
