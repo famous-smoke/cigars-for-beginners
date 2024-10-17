@@ -9,7 +9,10 @@ body.modal-open {
 .modal dialog {
   overscroll-behavior: none;
   overflow-y: hidden;
-  position: relative;
+  position: fixed; /* Changed from relative to fixed */
+  top: 50%; /* Added */
+  left: 50%; /* Added */
+  transform: translate(-50%, -50%); /* Added */
   width: calc(100vw - 48px);
   max-width: 900px;
   max-height: calc(100dvh - (2 * var(--header-height)));
@@ -28,7 +31,8 @@ body.modal-open {
   margin-top: 44px;
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
+  /* Corrected media query syntax */
   .modal dialog {
     width: calc(100vw - 64px);
   }
