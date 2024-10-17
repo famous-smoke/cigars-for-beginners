@@ -7,6 +7,11 @@
   display: none;
 }
 
+.columns-fixed.shrink-to-fit > div > div {
+  flex: 1 1 auto;
+  width: auto !important; /* Override inline widths */
+}
+
 .columns-fixed.align-top > div:not(.header) {
   display: flex;
   align-items: flex-start;
@@ -47,17 +52,10 @@
 /* Styles that apply only when 'shrink-to-fit' is present */
 .columns-fixed.shrink-to-fit > div:not(.header) {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-.columns-fixed.shrink-to-fit > div > div {
-  flex: 1 1 auto;
-  width: auto !important; /* Override inline widths */
+  flex-flow: row nowrap;
 }
 
 .columns-fixed.shrink-to-fit img {
-  max-width: 100%;
   height: auto;
   max-width: 55px;
 }
@@ -78,6 +76,11 @@
     display: flex;
   }
 
+  .columns-fixed.shrink-to-fit > div {
+    align-items: center;
+    gap: 32px;
+  }
+
   .section.comparison-table .columns-fixed > div {
     border: none;
   }
@@ -89,11 +92,6 @@
 
   .section.comparison-table .columns-fixed > div > div u {
     display: none;
-  }
-
-  .columns-fixed.shrink-to-fit > div {
-    align-items: center;
-    gap: 32px;
   }
 
   .columns-fixed.shrink-to-fit .header {
