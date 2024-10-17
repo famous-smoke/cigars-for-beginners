@@ -26,10 +26,35 @@ export default function decorate(block) {
 
     // eslint-disable-next-line no-plusplus
     for (let j = 0; j < rows[i].children.length; j++) {
-      rows[i].children[j].style.width = colWidths[j];
+      const cell = rows[i].children[j];
+      cell.style.width = colWidths[j];
 
-      // set picture widths for columns containing only a picture and a width
-      const children = rows[i].children[j].firstElementChild.childNodes;
+      // Detect and remove the button-container p tag, and make the picture a link
+      const buttonContainer = cell.querySelector('p.button-container');
+
+      if (buttonContainer) {
+        // Get the href from the a tag inside buttonContainer
+        const link = buttonContainer.querySelector('a');
+        const href = link.getAttribute('href');
+
+        // Remove the button-container p tag
+        buttonContainer.remove();
+
+        // Find the picture
+        const picture = cell.querySelector('picture');
+        if (picture) {
+          // Create a new a element
+          const linkElement = document.createElement('a');
+          linkElement.setAttribute('href', href);
+
+          // Replace the picture with the linkElement, and append the picture to it
+          picture.parentNode.replaceChild(linkElement, picture);
+          linkElement.appendChild(picture);
+        }
+      }
+
+      // Set picture widths for columns containing only a picture and a width
+      const children = cell.firstElementChild.childNodes;
       let img = null;
       // eslint-disable-next-line no-plusplus
       for (let k = 0; k < children.length; k++) {
