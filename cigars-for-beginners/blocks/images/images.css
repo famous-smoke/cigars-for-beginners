@@ -1,0 +1,61 @@
+/* Size Images */
+.images.extra-small img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+
+.images.small img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.images.medium img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+.images.large img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+}
+
+.images.extra-large img {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+}
+
+/* Align Images */
+.images.align-left img {
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.images.center img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.images.align-right img {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Zoom-in effect */
+.images.zoom-in img {
+  transform: scale(0.7);
+  transition: transform 0.3s ease-out;
+  opacity: 0.8;
+}
+
+.images.zoom-in img.in-view {
+  transform: scale(1);
+  opacity: 1;
+}
