@@ -14,17 +14,6 @@
     cursor: pointer;
 }
 
-.video-summary .video-summary-embed-title {
-    position: absolute;
-    top: 0;
-    color: #fff;
-    margin: 0 auto;
-    padding: 0.5em;
-    text-shadow: 2px 2px black;
-    font-size: var(--body-font-size-m);
-    background: #00000075;
-}
-
 .video-summary .video-summary-embed-facade::after {
     content: url('/cigars-for-beginners/icons/play.png');
     position: absolute;
@@ -82,10 +71,4 @@
 .video-summary > div > div:last-child p.show {
     visibility: visible;
     max-height: 500px;
-}
-
-@media (max-width: 600px) {
-    .video-summary-embed-title {
-        font-size: 0.8em;
-    }
 }
