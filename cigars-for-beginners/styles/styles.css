@@ -214,7 +214,8 @@ button.secondary {
 
 a.button.secondary:hover,
 a.button.secondary:focus,
-button.secondary:hover button.secondary:focus {
+button.secondary:hover,
+button.secondary:focus {
   background-color: var(--text-color);
   border-color: var(--text-color);
   color: var(--background-color);
@@ -250,7 +251,7 @@ main img {
 
 /* sections */
 main .section {
-  padding: 64px 16px;
+  padding: 16px 8px;
   max-width: var(--content-width);
   margin: 0 auto;
   word-wrap: break-word;
@@ -258,7 +259,7 @@ main .section {
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 16px 8px;
   }
 }
 
@@ -339,6 +340,14 @@ main .section {
 .section.center-title h3 {
   text-align: center;
   text-transform: uppercase;
+}
+
+.header-margin-bottom .header {
+  margin-bottom: 0.5em;
+}
+
+.section.bold-header .header {
+  font-weight: bold;
 }
 
 /* section metadata */
