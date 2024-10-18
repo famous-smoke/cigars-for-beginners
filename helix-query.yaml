@@ -3,6 +3,7 @@
   - '**/images/**'
   - '**/icons/**'
   - '**/fragments/**'
+  - '**/modals/**'
 
 version: 1
 indices:
@@ -14,6 +15,7 @@ indices:
       - '**/images/**'
       - '**/icons/**'
       - '**/fragments/**'
+      - '**/modals/**'
       - /cigars-for-beginners/footer
       - /cigars-for-beginners/404
     target: /cigars-for-beginners/index/query-index.json
