@@ -58,8 +58,10 @@ export async function fetchArticleInfo() {
 // Function to check if an element is in the viewport
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
-  const height = window.innerHeight || document.documentElement.clientHeight;
-  return rect.top >= 0 && rect.top + 100 <= height;
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+  const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  // eslint-disable-next-line max-len
+  return rect.top + 100 < viewportHeight && rect.bottom > 0 && rect.left < viewportWidth && rect.right > 0;
 }
 
 // Function to add the 'visible' class to list items when they scroll into view
@@ -71,13 +73,21 @@ function handleScroll() {
       item.style.transform = 'translateX(0)';
     }
   });
+
+  const zoomInImages = document.querySelectorAll('.images.zoom-in img');
+  zoomInImages.forEach((img) => {
+    if (isInViewport(img)) {
+      img.classList.add('in-view');
+    }
+  });
 }
 
-// Check if the document has the 'animate-right' class
+// Check for elements with onScroll animations
 const animateRight = document.querySelector('.item-list.animate-right');
+const zoomInImages = document.querySelectorAll('.images.zoom-in img');
 
-// Add event listener for scroll if animate-right class is present
-if (animateRight) {
+// Add event listener for scroll if animation classes are present
+if (animateRight || zoomInImages) {
   window.addEventListener('scroll', handleScroll);
   // Initial check in case some items are already in view
   handleScroll();

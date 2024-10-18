@@ -302,6 +302,24 @@ main .section {
   max-width: none;
 }
 
+.section.bg-wood2 {
+  background-image: url('/cigars-for-beginners/icons/background-wood-texture-cigar-sizes.jpg');
+  background-color: #f3efe4;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: none;
+}
+
+.section.bg-brown-texture {
+  background-image: url('/cigars-for-beginners/images/terms-tabs/media_11c9563b2b00d3c3f59376737971c9a720c9689a6.jpeg');
+  background-color: #6a3c25;
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: none;
+}
+
 .how-cigars-are-rolled h3 {
   padding-top: 3em;
 }
@@ -460,7 +478,6 @@ main .section:empty {
 
 /* specific sections */
 main .section.cigar-terminology {
-  background: url('/cigars-for-beginners/images/terms-tabs/media_11c9563b2b00d3c3f59376737971c9a720c9689a6.jpeg');
   color: white;
   width: 100%;
 }
