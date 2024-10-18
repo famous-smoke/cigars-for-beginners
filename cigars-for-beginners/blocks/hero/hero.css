@@ -11,6 +11,7 @@ main .hero-container {
   position: relative;
   padding: 32px;
   min-height: 300px;
+  margin-top: calc(0px - var(--nav-height));
 }
 
 .hero h1 {
@@ -19,6 +20,13 @@ main .hero-container {
   margin-right: auto;
   color: white;
   font-size: var(--heading-font-size-xxl);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  padding: 0 0.5em;
+  text-shadow: 1px 1px 2px #333;
 }
 
 .hero picture {

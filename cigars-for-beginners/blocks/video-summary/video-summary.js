@@ -39,18 +39,14 @@ function getShowHide() {
 export default async function decorate(block) {
   const url = block.querySelector('a');
 
-  const title = block.querySelector('h3');
-  title.className = 'video-summary-embed-title';
-
   const img = block.querySelector('img');
   img.className = 'video-summary-embed';
 
-  const facadeWrap = title.parentElement;
+  const facadeWrap = img.parentElement;
   facadeWrap.className = 'video-summary-embed-facade';
   facadeWrap.addEventListener('click', () => {
     const embed = getEmbed(url.innerText);
     facadeWrap.replaceWith(embed);
-    title.remove();
   });
 
   url.remove();
