@@ -50,7 +50,7 @@ async function buildLdJson(container) {
       url: 'https://www.famous-smoke.com/',
       logo: {
         '@type': 'ImageObject',
-        logo: 'https://www.famous-smoke.com/cigars-for-beginners/icons/logo.png',
+        logo: 'https://www.famous-smoke.com/cigars-for-beginners/icons/logo.webp',
         width: 147,
         height: 62,
       },
@@ -87,7 +87,7 @@ async function buildLdJson(container) {
 // generate the famous logo html
 function getFamousLogo() {
   // Create the image element
-  const picture = createOptimizedPicture('/cigars-for-beginners/icons/footer-logo.png', 'Famous Smoke Shop Logo');
+  const picture = createOptimizedPicture('/cigars-for-beginners/icons/footer-logo.webp', 'Famous Smoke Shop Logo');
   picture.className = 'footer-logo';
   const img = picture.lastElementChild;
   img.width = 147;

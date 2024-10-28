@@ -41,6 +41,7 @@ export default async function decorate(block) {
 
   const img = block.querySelector('img');
   img.className = 'video-summary-embed';
+  img.loading = 'eager';
 
   const facadeWrap = img.parentElement;
   facadeWrap.className = 'video-summary-embed-facade';

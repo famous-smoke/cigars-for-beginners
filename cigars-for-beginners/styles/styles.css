@@ -180,7 +180,7 @@ a.button:any-link::after {
   content: '';
   width: 14px;
   height: 14px;
-  background-image: url('/cigars-for-beginners/icons/icon-next.png');
+  background-image: url('/cigars-for-beginners/icons/icon-next.webp');
   background-position: left center;
   background-size: contain;
   display: inline-block;
@@ -276,7 +276,7 @@ main .section {
 }
 
 .section.bg-tobacco-leaves {
-  background-image: url('/cigars-for-beginners/icons/background-tobacco-leaves.png');
+  background-image: url('/cigars-for-beginners/icons/background-tobacco-leaves.webp');
   background-color: #5d7333;
   background-position: left top;
   background-size: cover;
@@ -285,7 +285,7 @@ main .section {
 }
 
 .section.bg-sand {
-  background-image: url('/cigars-for-beginners/icons/background-infused-cigars.jpg');
+  background-image: url('/cigars-for-beginners/icons/background-infused-cigars.webp');
   background-color: #6a3c25;
   background-position: left top;
   background-size: cover;
@@ -294,7 +294,7 @@ main .section {
 }
 
 .section.bg-wood {
-  background-image: url('/cigars-for-beginners/icons/background-wood-texture2.jpg');
+  background-image: url('/cigars-for-beginners/icons/background-wood-texture2.webp');
   background-color: #f3efe4;
   background-position: left top;
   background-size: 50%;
@@ -303,7 +303,7 @@ main .section {
 }
 
 .section.bg-wood2 {
-  background-image: url('/cigars-for-beginners/icons/background-wood-texture-cigar-sizes.jpg');
+  background-image: url('/cigars-for-beginners/icons/background-wood-texture-cigar-sizes.webp');
   background-color: #f3efe4;
   background-position: left top;
   background-size: cover;
@@ -312,7 +312,7 @@ main .section {
 }
 
 .section.bg-brown-texture {
-  background-image: url('/cigars-for-beginners/images/terms-tabs/media_11c9563b2b00d3c3f59376737971c9a720c9689a6.jpeg');
+  background-image: url('/cigars-for-beginners/icons/background-brown-texture.webp');
   background-color: #6a3c25;
   background-position: left top;
   background-size: cover;
@@ -384,7 +384,7 @@ main .section:empty {
 
 .section.bg-numbered-gray {
   background-color: #d8d8d8;
-  background-image: url('/cigars-for-beginners/icons/background-smoke.jpg');
+  background-image: url('/cigars-for-beginners/icons/background-smoke.webp');
   background-position: left top;
   background-size: cover;
   background-repeat: no-repeat;

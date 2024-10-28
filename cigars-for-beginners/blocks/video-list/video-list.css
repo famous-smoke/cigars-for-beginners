@@ -39,11 +39,11 @@
 }
 
 .video-list .video-list-card-image.video picture::after {
-    content: url("/cigars-for-beginners/icons/play.png");
+    content: url("/cigars-for-beginners/icons/play.webp");
 }
 
 .video-list .video-list-card-image.gif picture::after {
-    content: url("/cigars-for-beginners/icons/gif.png");
+    content: url("/cigars-for-beginners/icons/gif.webp");
 }
 
 /* modal styling */
