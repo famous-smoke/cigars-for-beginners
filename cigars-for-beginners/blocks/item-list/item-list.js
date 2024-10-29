@@ -36,7 +36,7 @@ export default async function decorate(block) {
       li.appendChild(picture);
     } else {
       // Add checkmark picture element
-      const checkmarkPicture = createOptimizedPicture('/cigars-for-beginners/icons/icon-green-checkmark.png', 'Checkmark');
+      const checkmarkPicture = createOptimizedPicture('/cigars-for-beginners/icons/icon-green-checkmark.webp', 'Checkmark');
       checkmarkPicture.className = 'footer-logo';
       const img = checkmarkPicture.lastElementChild;
       img.width = 92;

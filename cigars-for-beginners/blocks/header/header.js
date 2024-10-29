@@ -100,16 +100,20 @@ function createLogos(block) {
   const famousLogoLink = document.createElement('a');
   famousLogoLink.href = '/cigars-for-beginners';
   const famousLogo = document.createElement('img');
-  famousLogo.src = '/cigars-for-beginners/icons/logo.png';
+  famousLogo.src = '/cigars-for-beginners/icons/logo.webp';
   famousLogo.alt = 'Famous Smoke Shop Logo';
+  famousLogo.width = 93;
+  famousLogo.height = 39;
   famousLogo.className = 'famous-logo';
   famousLogoLink.appendChild(famousLogo);
 
   const siteLogoLink = document.createElement('a');
   siteLogoLink.href = '/cigars-for-beginners';
   const siteLogo = document.createElement('img');
-  siteLogo.src = '/cigars-for-beginners/icons/bgts-logo.png';
+  siteLogo.src = '/cigars-for-beginners/icons/bgts-logo.webp';
   siteLogo.alt = 'The Beginner\'s Guide to Cigar Smoking';
+  siteLogo.width = 290;
+  siteLogo.height = 44;
   siteLogo.className = 'site-logo';
   siteLogoLink.appendChild(siteLogo);
 
