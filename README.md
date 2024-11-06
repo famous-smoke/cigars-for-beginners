@@ -4,8 +4,8 @@ Learn about the lifestyle, the flavor, the norms, and the main how-to's of cigar
 
 ## Environments
 
-- Preview: https://main--cigars-for-beginners--famous-smoke.hlx.page/cigars-for-beginners
-- Live: https://main--cigars-for-beginners--famous-smoke.hlx.live/cigars-for-beginners
+- Preview: https://main--cigars-for-beginners--famous-smoke.aem.page/cigars-for-beginners
+- Live: https://main--cigars-for-beginners--famous-smoke.aem.live/cigars-for-beginners
 
 ## Installation
 
@@ -26,4 +26,4 @@ npm run lint
 1. Install the [AEM CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/aem-cli`
 1. Start AEM Proxy: `aem up` (opens your browser at `http://localhost:3000`)
 1. Open the `cigars-for-beginners` directory in your favorite IDE and start coding :)
-1. Once you are are ready to push your changes, simply use Git to add, commit, and push and your code to your preview `https://<branch>--<repo>--<owner>.hlx.page/` and production `https://<branch>--<repo>--<owner>.hlx.live/` sites.
+1. Once you are are ready to push your changes, simply use Git to add, commit, and push and your code to your preview `https://<branch>--<repo>--<owner>.aem.page/` and production `https://<branch>--<repo>--<owner>.aem.live/` sites.
