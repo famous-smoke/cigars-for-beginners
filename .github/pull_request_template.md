@@ -3,5 +3,5 @@ Please always provide the [GitHub issue(s)](../issues) your PR is for, as well a
 Fix #<gh-issue-id>
 
 Test URLs:
-- Before: https://main--cigars-for-beginners--famous-smoke.hlx.live/cigars-for-beginners
-- After: https://<branch>--cigars-for-beginners--famous-smoke.hlx.page/cigars-for-beginners
+- Before: https://main--cigars-for-beginners--famous-smoke.aem.live/cigars-for-beginners
+- After: https://<branch>--cigars-for-beginners--famous-smoke.aem.page/cigars-for-beginners
