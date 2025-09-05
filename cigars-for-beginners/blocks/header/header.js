@@ -100,7 +100,7 @@ function createLogos(block) {
   const famousLogoLink = document.createElement('a');
   famousLogoLink.href = '/cigars-for-beginners';
   const famousLogo = document.createElement('img');
-  famousLogo.src = '/cigars-for-beginners/icons/logo.webp';
+  famousLogo.src = '/cigars-for-beginners/icons/logo.svg';
   famousLogo.alt = 'Famous Smoke Shop Logo';
   famousLogo.width = 93;
   famousLogo.height = 39;
